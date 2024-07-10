@@ -14,6 +14,7 @@
 		9CBBFBCD2C3AD6E200807F3E /* shieldAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBCC2C3AD6E200807F3E /* shieldAppTests.swift */; };
 		9CBBFBD72C3AD6E200807F3E /* shieldAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBD62C3AD6E200807F3E /* shieldAppUITests.swift */; };
 		9CBBFBD92C3AD6E200807F3E /* shieldAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBD82C3AD6E200807F3E /* shieldAppUITestsLaunchTests.swift */; };
+		9CBBFBE62C3AD70700807F3E /* BlockTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBE52C3AD70700807F3E /* BlockTimeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		9CBBFBD22C3AD6E200807F3E /* shieldAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shieldAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CBBFBD62C3AD6E200807F3E /* shieldAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shieldAppUITests.swift; sourceTree = "<group>"; };
 		9CBBFBD82C3AD6E200807F3E /* shieldAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shieldAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9CBBFBE52C3AD70700807F3E /* BlockTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTimeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				9CBBFBBE2C3AD6E200807F3E /* Assets.xcassets */,
 				9CBBFBC02C3AD6E200807F3E /* shieldApp.entitlements */,
 				9CBBFBC12C3AD6E200807F3E /* Preview Content */,
+				9CBBFBE52C3AD70700807F3E /* BlockTimeView.swift */,
 			);
 			path = shieldApp;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				9CBBFBBD2C3AD6E000807F3E /* ContentView.swift in Sources */,
 				9CBBFBBB2C3AD6E000807F3E /* shieldAppApp.swift in Sources */,
+				9CBBFBE62C3AD70700807F3E /* BlockTimeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

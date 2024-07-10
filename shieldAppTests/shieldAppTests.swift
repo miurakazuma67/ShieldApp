@@ -6,30 +6,48 @@
 //
 
 import XCTest
+@testable import shieldApp
 
 final class shieldAppTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testAngleForDate() {
+        let calendar = Calendar.current
+        let date1 = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+        let date2 = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: Date())!
+        let date3 = calendar.date(bySettingHour: 18, minute: 0, second: 0, of: Date())!
+        
+        let picker = CircularTimePicker(blockStart: .constant(date1), blockEnd: .constant(date2))
+        
+        XCTAssertEqual(picker.angle(for: date1), 0.0)
+        XCTAssertEqual(picker.angle(for: date2), 0.5)
+        XCTAssertEqual(picker.angle(for: date3), 0.75)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testPositionForHour() {
+        let size = CGSize(width: 200, height: 200)
+        let picker = CircularTimePicker(blockStart: .constant(Date()), blockEnd: .constant(Date()))
+        
+        let pos0 = picker.position(for: 0, in: size)
+        let pos6 = picker.position(for: 6, in: size)
+        let pos12 = picker.position(for: 12, in: size)
+        let pos18 = picker.position(for: 18, in: size)
+        
+        XCTAssertEqual(pos0.x, size.width / 2, accuracy: 0.1)
+        XCTAssertEqual(pos0.y, size.height / 2 - size.height / 2 + 20, accuracy: 0.1)
+        XCTAssertEqual(pos6.x, size.width - 20, accuracy: 0.1)
+        XCTAssertEqual(pos6.y, size.height / 2, accuracy: 0.1)
+        XCTAssertEqual(pos12.x, size.width / 2, accuracy: 0.1)
+        XCTAssertEqual(pos12.y, size.height - 20, accuracy: 0.1)
+        XCTAssertEqual(pos18.x, 20, accuracy: 0.1)
+        XCTAssertEqual(pos18.y, size.height / 2, accuracy: 0.1)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testDrawingRange() {
+        let calendar = Calendar.current
+        let date1 = calendar.date(bySettingHour: 23, minute: 0, second: 0, of: Date())!
+        let date2 = calendar.date(bySettingHour: 1, minute: 0, second: 0, of: Date())!
+        
+        let picker = CircularTimePicker(blockStart: .constant(date1), blockEnd: .constant(date2))
+        
+        XCTAssertNotNil(picker.body)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
