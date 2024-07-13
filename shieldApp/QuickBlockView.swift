@@ -46,11 +46,11 @@ struct QuickBlockView: View {
                 GeometryReader { proxy in
                     ZStack(alignment: .leading) {
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(UIColor.systemGray6))
+                            .fill(Color(UIColor.systemGray4))
                             .frame(height: 40)
                         
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.pink.opacity(0.5))
+                            .fill(Color.green.opacity(0.5))
                             .frame(width: proxy.size.width * (completedHours / totalHours), height: 40)
                         
                         Text("\(Int(completedHours))時間0分")
