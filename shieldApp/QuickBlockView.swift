@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct QuickBlockView: View {
-    @State private var time: Int = 30
+    @State private var hour: Int = 30
+    @State private var minute: Int = 0
     @State private var repeatEnabled: Bool = false
     @State private var totalHours: CGFloat = 30
     @State private var completedHours: CGFloat = 10
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("スマホを封印しよう")
+            Text("集中しよう")
                 .font(.title2)
                 .padding(.top)
 
@@ -32,7 +33,7 @@ struct QuickBlockView: View {
             Spacer()
 
             VStack {
-                Text("\(time):00")
+                Text("\(hour):00")
                     .font(.system(size: 60, weight: .bold))
                     .foregroundColor(.green)
             }

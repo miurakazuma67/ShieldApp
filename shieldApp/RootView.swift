@@ -4,31 +4,37 @@
 //
 //  Created by 三浦一真 on 2024/07/13.
 //
-
+import Foundation
 import SwiftUI
 
-/// 画面遷移先を定義
-enum ViewPath {
+enum ViewPath: Hashable {
+    /// 画面遷移先のパスを定義
+    /// 画面遷移先を定義
     case blockTime       // グラフ画面
     case quickBlock
 }
 
-struct RootView: View {
-    @State private var viewPath: [ViewPath] = []
-    var body: some View {
-        NavigationStack(path: $viewPath) {
+class NavigationRouter: ObservableObject {
+    /// 現在の画面遷移先を保持する配列
+    @Published var viewPath: [ViewPath] = []
+}
 
+struct RootView: View {
+    @StateObject var router = NavigationRouter()
+    var body: some View {
+        NavigationStack(path: $router.viewPath) {
+            VStack{} // 空のVStack
+            .navigationDestination(for: ViewPath.self) { value in
+                switch (value) {
+                case .blockTime:
+                    BlockTimeView()
+                case .quickBlock:
+                    QuickBlockView()
+                }
+            }.environmentObject(router)
         }.onAppear {
             // 初期表示する画面を設定
-            viewPath.append(.quickBlock)
-        }
-        .navigationDestination(for: ViewPath.self) { value in
-            switch (value) {
-            case .blockTime:
-                BlockTimeView()
-            case .quickBlock:
-                QuickBlockView()
-            }
+            router.viewPath.append(.quickBlock)
         }
     }
 }
