@@ -18,61 +18,61 @@ struct FinishView: View {
         VStack {
             Text(activitySummary)
             Button("完了画面") {
-                showAlert = true
+                Task { await confirmAuthorization() }
             }
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("“ShieldApp”がスクリーンタイムへのアクセスを求めています"),
                     message: Text("“ShieldApp”でスクリーンタイムにアクセスできるようにすると、“ShieldApp”であなたのアクティビティデータを表示したり、コンテンツを制限したり、アプリやWebサイトの使用を制限することが許可される可能性があります。"),
                     primaryButton: .default(Text("続ける"), action: {
-                        requestScreenTimeAuthorization()
+                        Task {
+                            await authorize()
+                        }
                     }),
                     secondaryButton: .cancel(Text("許可しない"))
                 )
             }
         }
+        .onAppear {
+            Task { await checkAuthorizationStatus() }
+        }
+    }
+
+    func checkAuthorizationStatus() async {
+        let status = AuthorizationCenter.shared.authorizationStatus
+        print("🐈status: \(status)")
+        
+        if status == .approved {
+            print("承認済み")
+            UserDefaults.standard.set(true, forKey: "isAuthorized")
+        } else if !UserDefaults.standard.bool(forKey: "isAuthorized") {
+            showAlert = true
+        }
+    }
+
+    func confirmAuthorization() async {
+        let status = AuthorizationCenter.shared.authorizationStatus
+        print("🐈status: \(status)")
+        if status == .approved {
+            print("承認済み")
+        }
+        else {
+            showAlert = true
+        }
     }
     
-//    private func requestScreenTimeAuthorization() {
-//        let center = DeviceActivityCenter()
-//        let schedule = DeviceActivitySchedule(
-//            intervalStart: DateComponents(hour: 0, minute: 0),
-//            intervalEnd: DateComponents(hour: 23, minute: 59),
-//            repeats: true
-//        )
-//        
-//        do {
-//            try center.startMonitoring(.init(rawValue: "customActivityName"), during: schedule)
-//            print("Monitoring started successfully.")
-//        } catch {
-//            activitySummary = "Failed to start monitoring: \(error.localizedDescription)"
-//        }
-//    }
-    
-    private func requestScreenTimeAuthorization() {
-        // Request authorization for Family Controls
-        AuthorizationCenter.shared.requestAuthorization { result in
-            switch result {
-            case .success:
-                DispatchQueue.main.async {
-                    if let url = URL(string: "App-Prefs:root=SCREEN_TIME") {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    }
-                }
-            case .failure(let error):
-                activitySummary = "Authorization failed: \(error.localizedDescription)"
-            }
+    func authorize() async {
+        do {
+            try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+            UserDefaults.standard.set(true, forKey: "isAuthorized")
+            showAlert = false
+        } catch {
+             print("error: 登録ずみです")
         }
-    
-//    private func processActivityData(_ data: DeviceActivityResults<DeviceActivityEvent>) {
-//        // Process and summarize the activity data
-//        var summary = "Screen Time Data:\n"
-//        for (eventName, activity) in data.activities {
-//            summary += "Event: \(eventName), Duration: \(activity.totalDuration)\n"
-//        }
-//        activitySummary = summary
     }
 }
+
+
 
 struct FinishView_Previews: PreviewProvider {
     static var previews: some View {
