@@ -72,8 +72,6 @@ struct FinishView: View {
     }
 }
 
-
-
 struct FinishView_Previews: PreviewProvider {
     static var previews: some View {
         FinishView()

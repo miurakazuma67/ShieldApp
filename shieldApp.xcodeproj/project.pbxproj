@@ -19,6 +19,8 @@
 		9CBBFBD72C3AD6E200807F3E /* shieldAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBD62C3AD6E200807F3E /* shieldAppUITests.swift */; };
 		9CBBFBD92C3AD6E200807F3E /* shieldAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBD82C3AD6E200807F3E /* shieldAppUITestsLaunchTests.swift */; };
 		9CBBFBE62C3AD70700807F3E /* BlockTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBE52C3AD70700807F3E /* BlockTimeView.swift */; };
+		9CC4E40F2C4A85210019D357 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E40E2C4A85210019D357 /* FormView.swift */; };
+		9CC4E4112C4A86050019D357 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4102C4A86050019D357 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		9CBBFBD62C3AD6E200807F3E /* shieldAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shieldAppUITests.swift; sourceTree = "<group>"; };
 		9CBBFBD82C3AD6E200807F3E /* shieldAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shieldAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9CBBFBE52C3AD70700807F3E /* BlockTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTimeView.swift; sourceTree = "<group>"; };
+		9CC4E40E2C4A85210019D357 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		9CC4E4102C4A86050019D357 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */,
 				9C3F9F002C46A41600F9F8B0 /* FamilyControlPermissionView.swift */,
 				9C0FD2C12C46AABA00A63319 /* FinishView.swift */,
+				9CC4E40E2C4A85210019D357 /* FormView.swift */,
+				9CC4E4102C4A86050019D357 /* SafariView.swift */,
 				9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */,
 			);
 			path = shieldApp;
@@ -275,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0FD2C22C46AABB00A63319 /* FinishView.swift in Sources */,
+				9CC4E4112C4A86050019D357 /* SafariView.swift in Sources */,
 				9CBBFBBD2C3AD6E000807F3E /* ContentView.swift in Sources */,
 				9C3F9EFD2C41739C00F9F8B0 /* QuickBlockView.swift in Sources */,
+				9CC4E40F2C4A85210019D357 /* FormView.swift in Sources */,
 				9CBBFBBB2C3AD6E000807F3E /* shieldAppApp.swift in Sources */,
 				9C3F9F012C46A41600F9F8B0 /* FamilyControlPermissionView.swift in Sources */,
 				9CBBFBE62C3AD70700807F3E /* BlockTimeView.swift in Sources */,
