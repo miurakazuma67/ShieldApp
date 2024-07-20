@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import ManagedSettings
 
 struct ContentView: View {
+    
     var body: some View {
-        RootView()
+//        RootView()
+        ScreenTimeView()
     }
 }
 

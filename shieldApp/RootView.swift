@@ -9,9 +9,9 @@ import SwiftUI
 
 enum ViewPath: Hashable {
     /// 画面遷移先のパスを定義
-    /// 画面遷移先を定義
-    case blockTime       // グラフ画面
-    case quickBlock
+    case blockTime       // 時間制限画面
+    case quickBlock      // クイックブロック画面
+    case form            // お問い合わせフォーム画面
 }
 
 class NavigationRouter: ObservableObject {
@@ -30,6 +30,8 @@ struct RootView: View {
                     BlockTimeView()
                 case .quickBlock:
                     QuickBlockView()
+                case .form:
+                    FormWebView()
                 }
             }.environmentObject(router)
         }.onAppear {

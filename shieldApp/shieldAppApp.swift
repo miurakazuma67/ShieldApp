@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import ManagedSettings
 
 @main
 struct shieldAppApp: App {
     var body: some Scene {
         WindowGroup {
-            FinishView()
+            ContentView()
         }
     }
 }
