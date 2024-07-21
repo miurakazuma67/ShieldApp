@@ -25,6 +25,11 @@
 		9CC4E41C2C4B93CD0019D357 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E41B2C4B93CD0019D357 /* ExampleView.swift */; };
 		9CC4E4202C4BDAF80019D357 /* ScreenTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E41F2C4BDAF80019D357 /* ScreenTimeViewModel.swift */; };
 		9CC4E4222C4BDB790019D357 /* ScreenTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4212C4BDB790019D357 /* ScreenTimeView.swift */; };
+		9CC4E4252C4C021F0019D357 /* DeviceActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4242C4C021F0019D357 /* DeviceActivityView.swift */; };
+		9CC4E4282C4C05D70019D357 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4272C4C05D70019D357 /* PieChartView.swift */; };
+		9CC4E42B2C4CFBDD0019D357 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E42A2C4CFBDD0019D357 /* DataModel.swift */; };
+		9CC4E42D2C4CFD2E0019D357 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E42C2C4CFD2E0019D357 /* ScheduleModel.swift */; };
+		9CC4E42F2C4D04360019D357 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E42E2C4D04360019D357 /* DeviceActivityMonitorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +72,11 @@
 		9CC4E41B2C4B93CD0019D357 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		9CC4E41F2C4BDAF80019D357 /* ScreenTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeViewModel.swift; sourceTree = "<group>"; };
 		9CC4E4212C4BDB790019D357 /* ScreenTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeView.swift; sourceTree = "<group>"; };
+		9CC4E4242C4C021F0019D357 /* DeviceActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityView.swift; sourceTree = "<group>"; };
+		9CC4E4272C4C05D70019D357 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		9CC4E42A2C4CFBDD0019D357 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		9CC4E42C2C4CFD2E0019D357 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		9CC4E42E2C4D04360019D357 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +133,14 @@
 				9CBBFBC02C3AD6E200807F3E /* shieldApp.entitlements */,
 				9CBBFBC12C3AD6E200807F3E /* Preview Content */,
 				9CBBFBE52C3AD70700807F3E /* BlockTimeView.swift */,
+				9CC4E4292C4CFBCD0019D357 /* Model */,
 				9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */,
 				9C3F9F002C46A41600F9F8B0 /* FamilyControlPermissionView.swift */,
+				9CC4E4262C4C05BA0019D357 /* DeviceActivityViews */,
 				9CC4E4232C4C01B40019D357 /* Sample */,
 				9C0FD2C12C46AABA00A63319 /* FinishView.swift */,
 				9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */,
+				9CC4E42E2C4D04360019D357 /* DeviceActivityMonitorExtension.swift */,
 				9CC4E4182C4B6A960019D357 /* FormView */,
 			);
 			path = shieldApp;
@@ -176,6 +189,24 @@
 				9CC4E41B2C4B93CD0019D357 /* ExampleView.swift */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		9CC4E4262C4C05BA0019D357 /* DeviceActivityViews */ = {
+			isa = PBXGroup;
+			children = (
+				9CC4E4242C4C021F0019D357 /* DeviceActivityView.swift */,
+				9CC4E4272C4C05D70019D357 /* PieChartView.swift */,
+			);
+			path = DeviceActivityViews;
+			sourceTree = "<group>";
+		};
+		9CC4E4292C4CFBCD0019D357 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CC4E42A2C4CFBDD0019D357 /* DataModel.swift */,
+				9CC4E42C2C4CFD2E0019D357 /* ScheduleModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,12 +342,17 @@
 				9C0FD2C22C46AABB00A63319 /* FinishView.swift in Sources */,
 				9CBBFBBD2C3AD6E000807F3E /* ContentView.swift in Sources */,
 				9C3F9EFD2C41739C00F9F8B0 /* QuickBlockView.swift in Sources */,
+				9CC4E42F2C4D04360019D357 /* DeviceActivityMonitorExtension.swift in Sources */,
 				9CC4E4152C4B669D0019D357 /* ViewControllerRepresentable.swift in Sources */,
 				9CBBFBBB2C3AD6E000807F3E /* shieldAppApp.swift in Sources */,
+				9CC4E42B2C4CFBDD0019D357 /* DataModel.swift in Sources */,
 				9C3F9F012C46A41600F9F8B0 /* FamilyControlPermissionView.swift in Sources */,
+				9CC4E4282C4C05D70019D357 /* PieChartView.swift in Sources */,
 				9CBBFBE62C3AD70700807F3E /* BlockTimeView.swift in Sources */,
 				9CC4E4132C4B662F0019D357 /* ViewController.swift in Sources */,
 				9C3F9EFF2C41F64500F9F8B0 /* RootView.swift in Sources */,
+				9CC4E4252C4C021F0019D357 /* DeviceActivityView.swift in Sources */,
+				9CC4E42D2C4CFD2E0019D357 /* ScheduleModel.swift in Sources */,
 				9CC4E4172C4B6A200019D357 /* FormWebView.swift in Sources */,
 				9CC4E4222C4BDB790019D357 /* ScreenTimeView.swift in Sources */,
 				9CC4E41C2C4B93CD0019D357 /* ExampleView.swift in Sources */,

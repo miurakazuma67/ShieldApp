@@ -5,14 +5,14 @@
 //  Created by 三浦一真 on 2024/07/07.
 //
 
-import SwiftUI
 import ManagedSettings
+import SwiftUI
 
 @main
 struct shieldAppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }

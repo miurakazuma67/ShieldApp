@@ -14,21 +14,31 @@ struct QuickBlockView: View {
     @State private var repeatEnabled: Bool = false
     @State private var totalHours: CGFloat = 30
     @State private var completedHours: CGFloat = 10
-
+    @State private var isEncouragedPresented = false // アプリ制限画面表示用のフラグ
+    @EnvironmentObject var model: DataModel
+    
     var body: some View {
         VStack(spacing: 20) {
             Text("集中しよう")
                 .font(.title2)
                 .padding(.top)
-
-            HStack {
-                Image(systemName: "circle.grid.3x3.fill")
-                Text("+31 を除く")
-                    .font(.subheadline)
-            }
+            
+            Button(action: {
+                isEncouragedPresented = true
+            }, label: {
+                HStack {
+                    Image(systemName: "circle.grid.3x3.fill")
+                    Text("制限するアプリを選択する")
+                        .font(.subheadline)
+                }
+            })
             .padding()
             .background(Color(UIColor.systemGray6))
             .cornerRadius(20)
+            .familyActivityPicker(isPresented: $isEncouragedPresented, selection: $model.selectionToEncourage) // アプリ一覧表示
+            .onChange(of: model.selectionToDiscourage) {
+                DataModel.shared.setShieldRestrictions()
+            } // 値を更新
 
             Spacer()
 
