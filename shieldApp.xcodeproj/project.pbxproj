@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C0FD2C22C46AABB00A63319 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FD2C12C46AABA00A63319 /* FinishView.swift */; };
+		9C1424CE2C4FF09B005E873E /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1424CD2C4FF09B005E873E /* StarRating.swift */; };
 		9C3F9EFD2C41739C00F9F8B0 /* QuickBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */; };
 		9C3F9EFF2C41F64500F9F8B0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */; };
 		9C3F9F012C46A41600F9F8B0 /* FamilyControlPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F9F002C46A41600F9F8B0 /* FamilyControlPermissionView.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		9C0FD2C12C46AABA00A63319 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
+		9C1424CD2C4FF09B005E873E /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
 		9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBlockView.swift; sourceTree = "<group>"; };
 		9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		9C3F9F002C46A41600F9F8B0 /* FamilyControlPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyControlPermissionView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				9CC4E4262C4C05BA0019D357 /* DeviceActivityViews */,
 				9CC4E4232C4C01B40019D357 /* Sample */,
 				9C0FD2C12C46AABA00A63319 /* FinishView.swift */,
+				9C1424CD2C4FF09B005E873E /* StarRating.swift */,
 				9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */,
 				9CC4E42E2C4D04360019D357 /* DeviceActivityMonitorExtension.swift */,
 				9CC4E4182C4B6A960019D357 /* FormView */,
@@ -354,6 +357,7 @@
 				9CC4E4252C4C021F0019D357 /* DeviceActivityView.swift in Sources */,
 				9CC4E42D2C4CFD2E0019D357 /* ScheduleModel.swift in Sources */,
 				9CC4E4172C4B6A200019D357 /* FormWebView.swift in Sources */,
+				9C1424CE2C4FF09B005E873E /* StarRating.swift in Sources */,
 				9CC4E4222C4BDB790019D357 /* ScreenTimeView.swift in Sources */,
 				9CC4E41C2C4B93CD0019D357 /* ExampleView.swift in Sources */,
 				9CC4E4202C4BDAF80019D357 /* ScreenTimeViewModel.swift in Sources */,
