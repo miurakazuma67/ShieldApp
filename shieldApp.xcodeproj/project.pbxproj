@@ -139,7 +139,7 @@
 				9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */,
 				9C3F9F002C46A41600F9F8B0 /* FamilyControlPermissionView.swift */,
 				9CC4E4262C4C05BA0019D357 /* DeviceActivityViews */,
-				9CC4E4232C4C01B40019D357 /* Sample */,
+				9CC4E4232C4C01B40019D357 /* NotUse */,
 				9C0FD2C12C46AABA00A63319 /* FinishView.swift */,
 				9C1424CD2C4FF09B005E873E /* StarRating.swift */,
 				9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */,
@@ -184,14 +184,14 @@
 			path = FormView;
 			sourceTree = "<group>";
 		};
-		9CC4E4232C4C01B40019D357 /* Sample */ = {
+		9CC4E4232C4C01B40019D357 /* NotUse */ = {
 			isa = PBXGroup;
 			children = (
 				9CC4E41F2C4BDAF80019D357 /* ScreenTimeViewModel.swift */,
 				9CC4E4212C4BDB790019D357 /* ScreenTimeView.swift */,
 				9CC4E41B2C4B93CD0019D357 /* ExampleView.swift */,
 			);
-			path = Sample;
+			path = NotUse;
 			sourceTree = "<group>";
 		};
 		9CC4E4262C4C05BA0019D357 /* DeviceActivityViews */ = {

@@ -43,6 +43,7 @@ struct RootView: View {
             BlockTimeView()
           case .quickBlock:
             QuickBlockView()
+                  .environmentObject(model)
           case .form:
             FormWebView()
           }
@@ -52,7 +53,7 @@ struct RootView: View {
     }.onAppear {
       // 初期表示する画面を設定
       //            router.viewPath.append(.quickBlock)
-      router.viewPath.append(.content)
+      router.viewPath.append(.quickBlock)
     }
   }
 }

@@ -40,7 +40,6 @@ struct FinishView: View {
 
     func checkAuthorizationStatus() async {
         let status = AuthorizationCenter.shared.authorizationStatus
-        print("🐈status: \(status)")
         
         if status == .approved {
             print("承認済み")
@@ -60,7 +59,7 @@ struct FinishView: View {
             showAlert = true
         }
     }
-    
+
     func authorize() async {
         do {
             try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
