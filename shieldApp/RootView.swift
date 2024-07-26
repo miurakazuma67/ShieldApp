@@ -14,6 +14,7 @@ enum ViewPath: Hashable {
   case blockTime  // 時間制限画面
   case quickBlock  // クイックブロック画面
   case form  // お問い合わせフォーム画面
+    case timer(totalMinutes: Int) // timer
 }
 
 class NavigationRouter: ObservableObject {
@@ -43,16 +44,18 @@ struct RootView: View {
             BlockTimeView()
           case .quickBlock:
             QuickBlockView()
-                  .environmentObject(model)
+             .environmentObject(model)
           case .form:
             FormWebView()
+          case .timer(let totalMinutes):
+              TimerView(totalMinutes: totalMinutes) // 仮置き
           }
-        }.environmentObject(router)
+        }
+        .environmentObject(router)
         .environmentObject(model)
         .environmentObject(store)
     }.onAppear {
       // 初期表示する画面を設定
-      //            router.viewPath.append(.quickBlock)
       router.viewPath.append(.quickBlock)
     }
   }

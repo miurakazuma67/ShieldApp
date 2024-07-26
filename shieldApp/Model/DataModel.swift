@@ -27,11 +27,17 @@ class DataModel: ObservableObject {
     }
     
     func setShieldRestrictions() {
-        let applications = DataModel.shared.selectionToDiscourage
+        let applications = self.selectionToDiscourage // 修正ポイント
         
         store.shield.applications = applications.applicationTokens.isEmpty ? nil : applications.applicationTokens
         store.shield.applicationCategories = applications.categoryTokens.isEmpty
-        ? nil
-        : ShieldSettings.ActivityCategoryPolicy.specific(applications.categoryTokens)
+            ? nil
+            : ShieldSettings.ActivityCategoryPolicy.specific(applications.categoryTokens)
+    }
+
+    /// shield解除用のメソッド
+    func clearShieldRestrictions() {
+        store.shield.applications = nil
+        store.shield.applicationCategories = nil
     }
 }
