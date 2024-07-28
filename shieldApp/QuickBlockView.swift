@@ -112,10 +112,11 @@ struct QuickBlockView: View {
           .foregroundColor(.white)
           .frame(maxWidth: .infinity)
           .padding()
-          .background(Color.blue)
+          .background(isDiscouragedSelected ? Color.blue : Color.gray)
           .cornerRadius(20)
       }
       .padding()
+      .disabled(!isDiscouragedSelected) // 何もアプリを選んでないときは非活性
     }
     .padding()
   }

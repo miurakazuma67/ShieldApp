@@ -9,11 +9,11 @@ import ManagedSettings
 import SwiftUI
 
 enum ViewPath: Hashable {
-  /// 画面遷移先のパスを定義
-  case content
-  case blockTime  // 時間制限画面
-  case quickBlock  // クイックブロック画面
-  case form  // お問い合わせフォーム画面
+    /// 画面遷移先のパスを定義
+    case content
+    case blockTime  // 時間制限画面
+    case quickBlock  // クイックブロック画面
+    case form  // お問い合わせフォーム画面
     case timer(totalMinutes: Int) // timer
 }
 
@@ -44,6 +44,7 @@ struct RootView: View {
             BlockTimeView()
           case .quickBlock:
             QuickBlockView()
+             .environmentObject(router)
              .environmentObject(model)
           case .form:
             FormWebView()
@@ -61,6 +62,6 @@ struct RootView: View {
   }
 }
 
-#Preview {
-  RootView()
-}
+//#Preview {
+//  RootView()
+//}
