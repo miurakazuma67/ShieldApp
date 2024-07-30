@@ -36,6 +36,9 @@ struct TimerView: View {
                     Text(String(format: "%.0f%%", viewModel.progress * 100))
                         .font(.largeTitle)
                 }
+                if viewModel.finishFlag {
+                    Text("勉強が完了したよ")
+                }
             }
             .padding()
 
@@ -45,6 +48,7 @@ struct TimerView: View {
         }
         .onAppear {
             viewModel.startTimer(totalMinutes: totalMinutes)  // timer開始
+            viewModel.startFocusSession(selectedMinutes: totalMinutes)
         }
     }
 }
