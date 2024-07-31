@@ -50,6 +50,9 @@ struct RootView: View {
             FormWebView()
           case .timer(let totalMinutes):
               TimerView(totalMinutes: totalMinutes) // 仮置き
+                  .navigationBarBackButtonHidden(true)
+                  .navigationTitle(String("制限時間: \(totalMinutes)分"))
+                  .navigationBarTitleDisplayMode(.inline)
           }
         }
         .environmentObject(router)

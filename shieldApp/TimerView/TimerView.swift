@@ -48,7 +48,7 @@ struct TimerView: View {
         }
         .onAppear {
             viewModel.startTimer(totalMinutes: totalMinutes)  // timer開始
-            viewModel.startFocusSession(selectedMinutes: totalMinutes)
+//            viewModel.startFocusSession(selectedMinutes: totalMinutes)
         }
     }
 }

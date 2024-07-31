@@ -45,7 +45,7 @@ class TimerViewModel: ObservableObject {
     print(" 🐈\(selectedMinutes)")
     // ブロックスターターボタンのアクション
     let focusDuration = TimeInterval(selectedMinutes * 60)
-
+    print(" 🐈フォーカス；\(selectedMinutes)")
     // アプリ使用制限を設定
     DataModel.shared.setShieldRestrictions()
 
