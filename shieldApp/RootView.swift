@@ -7,9 +7,11 @@
 import Foundation
 import ManagedSettings
 import SwiftUI
+import FamilyControls
 
 enum ViewPath: Hashable {
   /// 画面遷移先のパスを定義
+  case finish // スクリーンタイムの許可画面
   case content
   case blockTime  // 時間制限画面
   case quickBlock  // クイックブロック画面
@@ -38,6 +40,8 @@ struct RootView: View {
       }  // 空のVStack
         .navigationDestination(for: ViewPath.self) { value in
           switch value {
+          case .finish:
+              FinishView()
           case .content:
               ContentView()
           case .blockTime:
@@ -56,7 +60,23 @@ struct RootView: View {
         .environmentObject(store)
     }.onAppear {
       // 初期表示する画面を設定
+//      checkScreenTimeAuthorization()
       router.viewPath.append(.quickBlock)
+        
+        
+// TODO: 遷移先を分岐できるようにする
+//        let status = AuthorizationCenter.shared.authorizationStatus
+//        print("🐈status: \(status)")
+//        if status == .approved {
+//            print("承認済み")
+//            router.viewPath.append(.quickBlock)
+//        }
+//        else {
+//            router.viewPath.append(.finish)
+//        }
+        
+        
+        
     }
   }
 }

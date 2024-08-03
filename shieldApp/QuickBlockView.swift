@@ -46,8 +46,10 @@ struct QuickBlockView: View {
         isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage
       )  // アプリ一覧表示
       .onChange(of: model.selectionToDiscourage) {
+          print("Selected applications: \($0.applicationTokens)")
+          print("Selected categories: \($0.categoryTokens)")
         DataModel.shared.setShieldRestrictions()
-        isDiscouragedSelected = true
+        isDiscouragedSelected = true // ボタンを活性にする
       }
 
       Spacer()
@@ -103,8 +105,8 @@ struct QuickBlockView: View {
 //      .padding()
 
       Button(action: {
-//        startFocusSession()
-          router.viewPath.append(.timer(totalMinutes: selectedMinutes)) // 入力した時間を遷移先に渡す
+          startFocusSession(selectedMinutes: 5)
+//          router.viewPath.append(.timer(totalMinutes: selectedMinutes)) // 入力した時間を遷移先に渡す
       }) {
         Text("集中する！")
           .font(.title2)
