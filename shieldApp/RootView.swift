@@ -60,23 +60,18 @@ struct RootView: View {
         .environmentObject(store)
     }.onAppear {
       // 初期表示する画面を設定
-//      checkScreenTimeAuthorization()
-      router.viewPath.append(.quickBlock)
-        
-        
+//      router.viewPath.append(.quickBlock)
+
 // TODO: 遷移先を分岐できるようにする
-//        let status = AuthorizationCenter.shared.authorizationStatus
-//        print("🐈status: \(status)")
-//        if status == .approved {
-//            print("承認済み")
-//            router.viewPath.append(.quickBlock)
-//        }
-//        else {
-//            router.viewPath.append(.finish)
-//        }
-        
-        
-        
+        let status = AuthorizationCenter.shared.authorizationStatus
+        print("🐈status: \(status)")
+        if status == .approved {
+            print("承認済み")
+            router.viewPath.append(.quickBlock)
+        }
+        else {
+            router.viewPath.append(.finish)
+        }
     }
   }
 }

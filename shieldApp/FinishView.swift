@@ -40,6 +40,7 @@ struct FinishView: View {
 
     func checkAuthorizationStatus() async {
         let status = AuthorizationCenter.shared.authorizationStatus
+        print("🍣status: \(status)")
         
         if status == .approved {
             print("承認済み")
@@ -68,11 +69,5 @@ struct FinishView: View {
         } catch {
              print("error: 登録ずみです")
         }
-    }
-}
-
-struct FinishView_Previews: PreviewProvider {
-    static var previews: some View {
-        FinishView()
     }
 }

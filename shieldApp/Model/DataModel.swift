@@ -34,13 +34,10 @@ class DataModel: ObservableObject {
     
     func setShieldRestrictions() {
         let applications = DataModel.shared.selectionToDiscourage // 修正ポイント
-        print("🐈 store.shield: \(store.shield)")
         store.shield.applications = applications.applicationTokens.isEmpty ? nil : applications.applicationTokens
-        print("🐈store.shield.applications: \(store.shield.applications)")
         store.shield.applicationCategories = applications.categoryTokens.isEmpty
             ? nil
             : ShieldSettings.ActivityCategoryPolicy.specific(applications.categoryTokens)
-        print("🐈store.shield.applicationCategories: \(store.shield.applicationCategories)")
     }
 
     /// shield解除用のメソッド

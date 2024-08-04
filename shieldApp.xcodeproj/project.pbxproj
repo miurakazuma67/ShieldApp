@@ -11,6 +11,7 @@
 		9C0D8D572C53C12200613872 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0D8D562C53C12200613872 /* TimerView.swift */; };
 		9C0D8D592C53C16D00613872 /* IconAndTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0D8D582C53C16D00613872 /* IconAndTextView.swift */; };
 		9C0D8D5D2C5DE16B00613872 /* checkScreenTimeAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0D8D5C2C5DE16B00613872 /* checkScreenTimeAuthorization.swift */; };
+		9C0D8D5F2C5E43F500613872 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0D8D5E2C5E43F500613872 /* AuthorizationViewModel.swift */; };
 		9C0FD2C22C46AABB00A63319 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FD2C12C46AABA00A63319 /* FinishView.swift */; };
 		9C1424CE2C4FF09B005E873E /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1424CD2C4FF09B005E873E /* StarRating.swift */; };
 		9C3F9EFD2C41739C00F9F8B0 /* QuickBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */; };
@@ -59,6 +60,7 @@
 		9C0D8D562C53C12200613872 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		9C0D8D582C53C16D00613872 /* IconAndTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAndTextView.swift; sourceTree = "<group>"; };
 		9C0D8D5C2C5DE16B00613872 /* checkScreenTimeAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkScreenTimeAuthorization.swift; sourceTree = "<group>"; };
+		9C0D8D5E2C5E43F500613872 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		9C0FD2C12C46AABA00A63319 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
 		9C1424CD2C4FF09B005E873E /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
 		9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBlockView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				9CC4E4262C4C05BA0019D357 /* DeviceActivityViews */,
 				9CC4E4232C4C01B40019D357 /* NotUse */,
 				9C0FD2C12C46AABA00A63319 /* FinishView.swift */,
+				9C0D8D5E2C5E43F500613872 /* AuthorizationViewModel.swift */,
 				9C1424CD2C4FF09B005E873E /* StarRating.swift */,
 				9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */,
 				9CC4E42E2C4D04360019D357 /* DeviceActivityMonitorExtension.swift */,
@@ -382,6 +385,7 @@
 				9CBBFBBB2C3AD6E000807F3E /* shieldAppApp.swift in Sources */,
 				9CC4E42B2C4CFBDD0019D357 /* DataModel.swift in Sources */,
 				9C3F9F012C46A41600F9F8B0 /* FamilyControlPermissionView.swift in Sources */,
+				9C0D8D5F2C5E43F500613872 /* AuthorizationViewModel.swift in Sources */,
 				9CC4E4282C4C05D70019D357 /* PieChartView.swift in Sources */,
 				9CBBFBE62C3AD70700807F3E /* BlockTimeView.swift in Sources */,
 				9CC4E4132C4B662F0019D357 /* ViewController.swift in Sources */,
