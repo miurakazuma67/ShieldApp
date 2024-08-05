@@ -175,7 +175,6 @@ struct QuickBlockView: View {
                 isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage
             )  // アプリ一覧表示
             .onChange(of: model.selectionToDiscourage) {
-                print("🍣Selected applications: \(model.selectionToDiscourage.applicationTokens)")
                 DataModel.shared.setShieldRestrictions()
                 isDiscouragedSelected = !model.selectionToDiscourage.applicationTokens.isEmpty // ボタンを活性にする
             }
