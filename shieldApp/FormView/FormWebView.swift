@@ -12,7 +12,3 @@ struct FormWebView: View {
         ViewControllerRepresentable()
     }
 }
-
-#Preview {
-    FormWebView()
-}

@@ -13,24 +13,23 @@ private let _DataModel = DataModel()
 
 class DataModel: ObservableObject {
     let store = ManagedSettingsStore()
-    
+
     @Published var selectionToDiscourage: FamilyActivitySelection
     @Published var selectionToEncourage: FamilyActivitySelection
-    
+
     init() {
         selectionToDiscourage = FamilyActivitySelection()
         selectionToEncourage = FamilyActivitySelection()
     }
-    
+
     class var shared: DataModel {
         return _DataModel
     }
 
     // shield制限をかけるメソッド
     func setShieldRestrictions() {
-        let applications = DataModel.shared.selectionToDiscourage
-        print("🐕app: \(applications)")
-        store.shield.applications = applications.applicationTokens.isEmpty ? nil : applications.applicationTokens
+        let applications = DataModel.shared.selectionToDiscourage // 選択したアプリをセット
+        store.shield.applications = applications.applicationTokens.isEmpty ? nil : applications.applicationTokens // tokenを設定
         store.shield.applicationCategories = applications.categoryTokens.isEmpty
             ? nil
             : ShieldSettings.ActivityCategoryPolicy.specific(applications.categoryTokens)

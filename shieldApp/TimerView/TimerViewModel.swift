@@ -10,11 +10,11 @@ import Combine
 class TimerViewModel: ObservableObject {
     @Published var progress: Double = 0.0  // タイマーの進捗（0.0で0%、1.0で100%）
     @Published var elapsedTimeString: String = "00:00"
+    @Published var isFinished: Bool = false  // 完了フラグ
 
     private var totalTime: Double = 0.0  // タイマーの総時間（秒）
     private var timer: Timer?  // タイマーオブジェクト
     private var startTime: Date?  // タイマー開始時刻
-    var finishFlag: Bool = false  // 終了フラグ
 
     func startTimer(totalMinutes: Int) {
         self.totalTime = Double(totalMinutes * 60) // 最大時間
@@ -42,16 +42,15 @@ class TimerViewModel: ObservableObject {
 
     // ブロックをスタートする関数
     func startFocusSession(selectedMinutes: Int) {
-    print(" 🐈\(selectedMinutes)")
     // ブロックスターターボタンのアクション
     let focusDuration = TimeInterval(selectedMinutes * 60)
-    print(" 🐈フォーカス；\(selectedMinutes)")
     // アプリ使用制限を設定
     DataModel.shared.setShieldRestrictions()
 
     // 指定された時間後に解除
     DispatchQueue.main.asyncAfter(deadline: .now() + focusDuration) {
       DataModel.shared.clearShieldRestrictions()
+      self.isFinished = true // モーダルを閉じる
     }
   }
 

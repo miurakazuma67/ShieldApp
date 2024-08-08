@@ -39,9 +39,3 @@ struct FamilyControlPermissionView: View {
         }
     }
 }
-
-struct FamilyControlPermissionView_Previews: PreviewProvider {
-    static var previews: some View {
-        FamilyControlPermissionView()
-    }
-}
