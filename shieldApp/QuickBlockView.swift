@@ -45,7 +45,7 @@ struct QuickBlockView: View {
             )  // アプリ一覧表示
             .onChange(of: model.selectionToDiscourage) {
                 DataModel.shared.setShieldRestrictions()
-                isDiscouragedSelected = !model.selectionToDiscourage.applicationTokens.isEmpty // ボタンを活性にする
+                isDiscouragedSelected = !model.selectionToDiscourage.applicationTokens.isEmpty || !model.selectionToDiscourage.categoryTokens.isEmpty // ボタンを活性にする
             }
 
             Spacer()
@@ -86,6 +86,7 @@ struct QuickBlockView: View {
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(isDiscouragedSelected ? Color.blue : Color.gray)
+//                    .background(isDiscouragedSelected ? Color.themeGradient : Color.gray)
                     .cornerRadius(20)
             }
             .padding()
