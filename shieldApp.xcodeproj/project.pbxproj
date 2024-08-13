@@ -16,6 +16,8 @@
 		9C0D8D6E2C69043500613872 /* ManagedSettingsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0D8D6D2C69043500613872 /* ManagedSettingsUI.framework */; };
 		9C0D8D712C69043500613872 /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0D8D702C69043500613872 /* ShieldConfigurationExtension.swift */; };
 		9C0D8D762C69043500613872 /* ShieldConfiguration+.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9C0D8D692C69043500613872 /* ShieldConfiguration+.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C0D8D7C2C6980DD00613872 /* ThemeColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0D8D7B2C6980DD00613872 /* ThemeColorButton.swift */; };
+		9C0D8D7E2C6A0EEF00613872 /* WorkLogMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0D8D7D2C6A0EEF00613872 /* WorkLogMonitor.swift */; };
 		9C0FD2C22C46AABB00A63319 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0FD2C12C46AABA00A63319 /* FinishView.swift */; };
 		9C1424CE2C4FF09B005E873E /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1424CD2C4FF09B005E873E /* StarRating.swift */; };
 		9C3F9EFD2C41739C00F9F8B0 /* QuickBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */; };
@@ -32,14 +34,7 @@
 		9CC4E4132C4B662F0019D357 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4122C4B662F0019D357 /* ViewController.swift */; };
 		9CC4E4152C4B669D0019D357 /* ViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4142C4B669D0019D357 /* ViewControllerRepresentable.swift */; };
 		9CC4E4172C4B6A200019D357 /* FormWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4162C4B6A200019D357 /* FormWebView.swift */; };
-		9CC4E41C2C4B93CD0019D357 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E41B2C4B93CD0019D357 /* ExampleView.swift */; };
-		9CC4E4202C4BDAF80019D357 /* ScreenTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E41F2C4BDAF80019D357 /* ScreenTimeViewModel.swift */; };
-		9CC4E4222C4BDB790019D357 /* ScreenTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4212C4BDB790019D357 /* ScreenTimeView.swift */; };
-		9CC4E4252C4C021F0019D357 /* DeviceActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4242C4C021F0019D357 /* DeviceActivityView.swift */; };
-		9CC4E4282C4C05D70019D357 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E4272C4C05D70019D357 /* PieChartView.swift */; };
 		9CC4E42B2C4CFBDD0019D357 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E42A2C4CFBDD0019D357 /* DataModel.swift */; };
-		9CC4E42D2C4CFD2E0019D357 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E42C2C4CFD2E0019D357 /* ScheduleModel.swift */; };
-		9CC4E42F2C4D04360019D357 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4E42E2C4D04360019D357 /* DeviceActivityMonitorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +87,8 @@
 		9C0D8D702C69043500613872 /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
 		9C0D8D722C69043500613872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C0D8D732C69043500613872 /* ShieldConfiguration_.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShieldConfiguration_.entitlements; sourceTree = "<group>"; };
+		9C0D8D7B2C6980DD00613872 /* ThemeColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorButton.swift; sourceTree = "<group>"; };
+		9C0D8D7D2C6A0EEF00613872 /* WorkLogMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogMonitor.swift; sourceTree = "<group>"; };
 		9C0FD2C12C46AABA00A63319 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
 		9C1424CD2C4FF09B005E873E /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
 		9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBlockView.swift; sourceTree = "<group>"; };
@@ -112,14 +109,7 @@
 		9CC4E4122C4B662F0019D357 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CC4E4142C4B669D0019D357 /* ViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		9CC4E4162C4B6A200019D357 /* FormWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormWebView.swift; sourceTree = "<group>"; };
-		9CC4E41B2C4B93CD0019D357 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
-		9CC4E41F2C4BDAF80019D357 /* ScreenTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeViewModel.swift; sourceTree = "<group>"; };
-		9CC4E4212C4BDB790019D357 /* ScreenTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeView.swift; sourceTree = "<group>"; };
-		9CC4E4242C4C021F0019D357 /* DeviceActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityView.swift; sourceTree = "<group>"; };
-		9CC4E4272C4C05D70019D357 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		9CC4E42A2C4CFBDD0019D357 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		9CC4E42C2C4CFD2E0019D357 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
-		9CC4E42E2C4D04360019D357 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +152,7 @@
 				9C1424CD2C4FF09B005E873E /* StarRating.swift */,
 				9C0D8D582C53C16D00613872 /* IconAndTextView.swift */,
 				9C0D8D602C619B8100613872 /* FinishModal.swift */,
+				9C0D8D7B2C6980DD00613872 /* ThemeColorButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -238,11 +229,9 @@
 				9CC4E4292C4CFBCD0019D357 /* Model */,
 				9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */,
 				9C3F9F002C46A41600F9F8B0 /* FamilyControlPermissionView.swift */,
-				9CC4E4262C4C05BA0019D357 /* DeviceActivityViews */,
-				9CC4E4232C4C01B40019D357 /* NotUse */,
+				9CC4E4262C4C05BA0019D357 /* DeviceActivitys */,
 				9C0FD2C12C46AABA00A63319 /* FinishView.swift */,
 				9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */,
-				9CC4E42E2C4D04360019D357 /* DeviceActivityMonitorExtension.swift */,
 				9C0D8D5B2C53C1E500613872 /* TimerView */,
 				9CC4E4182C4B6A960019D357 /* FormView */,
 				9C0D8D5A2C53C1CD00613872 /* Components */,
@@ -285,24 +274,12 @@
 			path = FormView;
 			sourceTree = "<group>";
 		};
-		9CC4E4232C4C01B40019D357 /* NotUse */ = {
+		9CC4E4262C4C05BA0019D357 /* DeviceActivitys */ = {
 			isa = PBXGroup;
 			children = (
-				9CC4E42C2C4CFD2E0019D357 /* ScheduleModel.swift */,
-				9CC4E41F2C4BDAF80019D357 /* ScreenTimeViewModel.swift */,
-				9CC4E4212C4BDB790019D357 /* ScreenTimeView.swift */,
-				9CC4E41B2C4B93CD0019D357 /* ExampleView.swift */,
+				9C0D8D7D2C6A0EEF00613872 /* WorkLogMonitor.swift */,
 			);
-			path = NotUse;
-			sourceTree = "<group>";
-		};
-		9CC4E4262C4C05BA0019D357 /* DeviceActivityViews */ = {
-			isa = PBXGroup;
-			children = (
-				9CC4E4242C4C021F0019D357 /* DeviceActivityView.swift */,
-				9CC4E4272C4C05D70019D357 /* PieChartView.swift */,
-			);
-			path = DeviceActivityViews;
+			path = DeviceActivitys;
 			sourceTree = "<group>";
 		};
 		9CC4E4292C4CFBCD0019D357 /* Model */ = {
@@ -488,23 +465,18 @@
 				9C0FD2C22C46AABB00A63319 /* FinishView.swift in Sources */,
 				9CBBFBBD2C3AD6E000807F3E /* ContentView.swift in Sources */,
 				9C3F9EFD2C41739C00F9F8B0 /* QuickBlockView.swift in Sources */,
-				9CC4E42F2C4D04360019D357 /* DeviceActivityMonitorExtension.swift in Sources */,
 				9C0D8D592C53C16D00613872 /* IconAndTextView.swift in Sources */,
 				9CC4E4152C4B669D0019D357 /* ViewControllerRepresentable.swift in Sources */,
 				9CBBFBBB2C3AD6E000807F3E /* shieldAppApp.swift in Sources */,
 				9CC4E42B2C4CFBDD0019D357 /* DataModel.swift in Sources */,
 				9C3F9F012C46A41600F9F8B0 /* FamilyControlPermissionView.swift in Sources */,
-				9CC4E4282C4C05D70019D357 /* PieChartView.swift in Sources */,
 				9CBBFBE62C3AD70700807F3E /* BlockTimeView.swift in Sources */,
 				9CC4E4132C4B662F0019D357 /* ViewController.swift in Sources */,
 				9C3F9EFF2C41F64500F9F8B0 /* RootView.swift in Sources */,
-				9CC4E4252C4C021F0019D357 /* DeviceActivityView.swift in Sources */,
-				9CC4E42D2C4CFD2E0019D357 /* ScheduleModel.swift in Sources */,
 				9CC4E4172C4B6A200019D357 /* FormWebView.swift in Sources */,
 				9C1424CE2C4FF09B005E873E /* StarRating.swift in Sources */,
-				9CC4E4222C4BDB790019D357 /* ScreenTimeView.swift in Sources */,
-				9CC4E41C2C4B93CD0019D357 /* ExampleView.swift in Sources */,
-				9CC4E4202C4BDAF80019D357 /* ScreenTimeViewModel.swift in Sources */,
+				9C0D8D7E2C6A0EEF00613872 /* WorkLogMonitor.swift in Sources */,
+				9C0D8D7C2C6980DD00613872 /* ThemeColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

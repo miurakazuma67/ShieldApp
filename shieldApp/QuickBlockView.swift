@@ -18,13 +18,13 @@ struct QuickBlockView: View {
     @State private var isShowTimePicker = false       // 時間指定ピッカー表示フラグ
     @EnvironmentObject var router: NavigationRouter
     @EnvironmentObject var model: DataModel
-
+    
     var body: some View {
         VStack(spacing: 20) {
             Text("集中しよう")
                 .font(.title2)
                 .padding(.top)
-
+            
             Button(
                 action: {
                     isDiscouragedPresented = true
@@ -47,9 +47,9 @@ struct QuickBlockView: View {
                 DataModel.shared.setShieldRestrictions()
                 isDiscouragedSelected = !model.selectionToDiscourage.applicationTokens.isEmpty || !model.selectionToDiscourage.categoryTokens.isEmpty // ボタンを活性にする
             }
-
+            
             Spacer()
-
+            
             VStack {
                 Text("\(selectedMinutes):00") // 最大3時間くらい
                     .font(.system(size: 60, weight: .bold))
@@ -58,7 +58,7 @@ struct QuickBlockView: View {
                         isShowTimePicker = true    // 時間選択ピッカーの表示
                     }
             }
-
+            
             VStack {
                 Text("集中したい時間を選択する")
                     .font(.headline)
@@ -72,33 +72,40 @@ struct QuickBlockView: View {
                 .clipped()
             }
             .padding()
-
+            
             Spacer()
-
-            Button(action: {
-                startFocusSession(selectedMinutes: selectedMinutes)
-                router.viewPath.append(.timer(totalMinutes: selectedMinutes))
-            }) {
-                Text("集中する！")
-                    .font(.title2)
-                    .bold()
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(isDiscouragedSelected ? Color.blue : Color.gray)
-//                    .background(isDiscouragedSelected ? Color.themeGradient : Color.gray)
-                    .cornerRadius(20)
-            }
+            
+            //            Button(action: {
+            //                startFocusSession(selectedMinutes: selectedMinutes)
+            //                router.viewPath.append(.timer(totalMinutes: selectedMinutes))
+            //            }) {
+            //                Text("集中する！")
+            //                    .font(.title2)
+            //                    .bold()
+            //                    .foregroundColor(.white)
+            //                    .frame(maxWidth: .infinity)
+            //                    .padding()
+            //                    .background(isDiscouragedSelected ? Color.blue : Color.gray)
+            ////                    .background(isDiscouragedSelected ? Color.themeGradient : Color.gray)
+            //                    .cornerRadius(20)
+            //            }
+            ThemeColorButton(
+                title: "集中する",
+                action: {
+                    startFocusSession(selectedMinutes: selectedMinutes)
+                    router.viewPath.append(.timer(totalMinutes: selectedMinutes))
+                }
+            )
             .padding()
             .disabled(!isDiscouragedSelected) // 何もアプリを選んでないときは非活性
         }
         .padding()
     }
-
+    
     private func startFocusSession(selectedMinutes: Int) {
         let focusDuration = TimeInterval(selectedMinutes * 60)
         DataModel.shared.setShieldRestrictions()
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + focusDuration) {
             // アプリケーションの利用制限を解除
             DataModel.shared.clearShieldRestrictions()

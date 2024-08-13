@@ -40,7 +40,7 @@ struct FinishView: View {
 
     func checkAuthorizationStatus() async {
         let status = AuthorizationCenter.shared.authorizationStatus
-        
+
         if status == .approved {
             print("承認済み")
             UserDefaults.standard.set(true, forKey: "isAuthorized")
@@ -68,11 +68,5 @@ struct FinishView: View {
         } catch {
              print("error: 登録ずみです")
         }
-    }
-}
-
-struct FinishView_Previews: PreviewProvider {
-    static var previews: some View {
-        FinishView()
     }
 }

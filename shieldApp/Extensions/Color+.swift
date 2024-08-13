@@ -22,16 +22,4 @@ extension Color {
 
         self.init(red: red, green: green, blue: blue)
     }
-
-/// テーマカラー
-    static var themeGradient: some View {
-        LinearGradient(
-            gradient: Gradient(colors: [
-                Color(hex: "#1CD8D2"),
-                Color(hex: "#93EDC7")
-            ]),
-            startPoint: .leading,
-            endPoint: .trailing
-        )
-    }
 }
