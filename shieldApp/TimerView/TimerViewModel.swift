@@ -50,7 +50,7 @@ class TimerViewModel: ObservableObject {
     // 指定された時間後に解除
     DispatchQueue.main.asyncAfter(deadline: .now() + focusDuration) {
       DataModel.shared.clearShieldRestrictions()
-      self.isFinished = true // モーダルを閉じる
+      self.isFinished = true // おめでとうモーダルを出す
     }
   }
 

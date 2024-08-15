@@ -74,21 +74,7 @@ struct QuickBlockView: View {
             .padding()
             
             Spacer()
-            
-            //            Button(action: {
-            //                startFocusSession(selectedMinutes: selectedMinutes)
-            //                router.viewPath.append(.timer(totalMinutes: selectedMinutes))
-            //            }) {
-            //                Text("集中する！")
-            //                    .font(.title2)
-            //                    .bold()
-            //                    .foregroundColor(.white)
-            //                    .frame(maxWidth: .infinity)
-            //                    .padding()
-            //                    .background(isDiscouragedSelected ? Color.blue : Color.gray)
-            ////                    .background(isDiscouragedSelected ? Color.themeGradient : Color.gray)
-            //                    .cornerRadius(20)
-            //            }
+
             ThemeColorButton(
                 title: "集中する",
                 action: {

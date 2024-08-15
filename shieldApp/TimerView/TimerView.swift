@@ -47,6 +47,7 @@ struct TimerView: View {
                         .trim(from: 0.0, to: CGFloat(viewModel.progress))
                         .stroke(style: StrokeStyle(lineWidth: 8, lineCap: .round, lineJoin: .round))
                         .foregroundColor(Color.green)
+                        .opacity(0.6) // 少し薄く
                         .rotationEffect(Angle(degrees: -90))  // 0度の位置を上にする
 
                     VStack {
@@ -70,7 +71,6 @@ struct TimerView: View {
         }
         .onAppear {
             viewModel.startTimer(totalMinutes: totalMinutes)  // timer開始
-            viewModel.isFinished = true
         }
     }
 }
