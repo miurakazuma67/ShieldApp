@@ -72,3 +72,7 @@ bin/
 
 # Custom
 !README.md
+
+# env
+.env
+Environment.swift

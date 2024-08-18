@@ -85,7 +85,9 @@ struct QuickBlockView: View {
             .padding()
             .disabled(!isDiscouragedSelected) // 何もアプリを選んでないときは非活性
         }
-        .padding()
+//        .padding()
+        BannerView()
+            .frame(height: 60)
     }
     
     private func startFocusSession(selectedMinutes: Int) {
