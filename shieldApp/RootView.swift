@@ -6,11 +6,14 @@
 //
 import Foundation
 import ManagedSettings
+import DeviceActivity
 import SwiftUI
+import FamilyControls
 
 enum ViewPath: Hashable {
     /// 画面遷移先のパスを定義
     case content
+    case finish     // スクリーンタイムAPI許可画面
     case blockTime  // 時間制限画面
     case quickBlock  // クイックブロック画面
     case form  // お問い合わせフォーム画面
@@ -53,14 +56,23 @@ struct RootView: View {
                   .navigationBarBackButtonHidden(true)
                   .navigationTitle(String("制限時間: \(totalMinutes)分"))
                   .navigationBarTitleDisplayMode(.inline)
+          case .finish:
+              FinishView()
           }
         }
         .environmentObject(router)
         .environmentObject(model)
         .environmentObject(store)
     }.onAppear {
+        let status = AuthorizationCenter.shared.authorizationStatus
+        print("🍣status \(status)")
+
       // 初期表示する画面を設定
-      router.viewPath.append(.quickBlock)
+        if UserDefaults.standard.bool(forKey: "isAuthorized") {
+            router.viewPath.append(.quickBlock)
+        } else {
+            router.viewPath.append(.finish)
+        }
     }
   }
 }

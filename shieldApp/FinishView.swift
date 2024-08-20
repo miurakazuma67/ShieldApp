@@ -43,7 +43,9 @@ struct FinishView: View {
 
         if status == .approved {
             print("承認済み")
+            print()
             UserDefaults.standard.set(true, forKey: "isAuthorized")
+            return
         } else if !UserDefaults.standard.bool(forKey: "isAuthorized") {
             showAlert = true
         }
@@ -51,7 +53,6 @@ struct FinishView: View {
 
     func confirmAuthorization() async {
         let status = AuthorizationCenter.shared.authorizationStatus
-        print("🐈status: \(status)")
         if status == .approved {
             print("承認済み")
         }

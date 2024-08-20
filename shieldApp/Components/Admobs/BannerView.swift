@@ -24,6 +24,7 @@ class GADBannerViewController: UIViewController, GADBannerViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(adUnitID)
     }
 
     override func viewDidAppear(_ animated: Bool) {

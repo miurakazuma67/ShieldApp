@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FamilyControls
 
 struct QuickBlockView: View {
     @State private var selectedMinutes: Int = 0
@@ -86,8 +87,8 @@ struct QuickBlockView: View {
             .disabled(!isDiscouragedSelected) // 何もアプリを選んでないときは非活性
         }
 //        .padding()
-        BannerView()
-            .frame(height: 60)
+//        BannerView()
+//            .frame(height: 60)
     }
     
     private func startFocusSession(selectedMinutes: Int) {
