@@ -26,6 +26,11 @@
 		9C2835A82C701BA3002F8BBF /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 9C2835A72C701BA3002F8BBF /* .env */; };
 		9C2835AD2C70C711002F8BBF /* LoadEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2835AC2C70C711002F8BBF /* LoadEnv.swift */; };
 		9C2835AF2C70C841002F8BBF /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2835AE2C70C841002F8BBF /* AppConst.swift */; };
+		9C3E11B22C7559810061C952 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E11B12C7559810061C952 /* PageControl.swift */; };
+		9C3E11B42C7559A20061C952 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E11B32C7559A20061C952 /* PageView.swift */; };
+		9C3E11B62C7559C70061C952 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E11B52C7559C70061C952 /* PageViewController.swift */; };
+		9C3E11B82C7559E00061C952 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E11B72C7559E00061C952 /* TutorialView.swift */; };
+		9C3E11BA2C755A430061C952 /* ShowTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E11B92C755A430061C952 /* ShowTutorialView.swift */; };
 		9C3F9EFD2C41739C00F9F8B0 /* QuickBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */; };
 		9C3F9EFF2C41F64500F9F8B0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */; };
 		9C3F9F012C46A41600F9F8B0 /* FamilyControlPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F9F002C46A41600F9F8B0 /* FamilyControlPermissionView.swift */; };
@@ -112,6 +117,11 @@
 		9C2835A72C701BA3002F8BBF /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		9C2835AC2C70C711002F8BBF /* LoadEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadEnv.swift; sourceTree = "<group>"; };
 		9C2835AE2C70C841002F8BBF /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		9C3E11B12C7559810061C952 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		9C3E11B32C7559A20061C952 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		9C3E11B52C7559C70061C952 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		9C3E11B72C7559E00061C952 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		9C3E11B92C755A430061C952 /* ShowTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTutorialView.swift; sourceTree = "<group>"; };
 		9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBlockView.swift; sourceTree = "<group>"; };
 		9C3F9EFE2C41F64500F9F8B0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		9C3F9F002C46A41600F9F8B0 /* FamilyControlPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyControlPermissionView.swift; sourceTree = "<group>"; };
@@ -178,6 +188,7 @@
 		9C0D8D5A2C53C1CD00613872 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9C3E11B02C7559690061C952 /* Tutorials */,
 				9C2835A42C701A9F002F8BBF /* Admobs */,
 				9C1424CD2C4FF09B005E873E /* StarRating.swift */,
 				9C0D8D582C53C16D00613872 /* IconAndTextView.swift */,
@@ -233,6 +244,18 @@
 				9C2835A52C701AB0002F8BBF /* BannerView.swift */,
 			);
 			path = Admobs;
+			sourceTree = "<group>";
+		};
+		9C3E11B02C7559690061C952 /* Tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				9C3E11B12C7559810061C952 /* PageControl.swift */,
+				9C3E11B32C7559A20061C952 /* PageView.swift */,
+				9C3E11B52C7559C70061C952 /* PageViewController.swift */,
+				9C3E11B72C7559E00061C952 /* TutorialView.swift */,
+				9C3E11B92C755A430061C952 /* ShowTutorialView.swift */,
+			);
+			path = Tutorials;
 			sourceTree = "<group>";
 		};
 		9CAEDC897DA18086C574A201 /* Pods */ = {
@@ -653,6 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2835A62C701AB0002F8BBF /* BannerView.swift in Sources */,
+				9C3E11B42C7559A20061C952 /* PageView.swift in Sources */,
 				9C0D8D572C53C12200613872 /* TimerView.swift in Sources */,
 				9C0D8D642C68F94000613872 /* Color+.swift in Sources */,
 				9C0D8D612C619B8100613872 /* FinishModal.swift in Sources */,
@@ -661,13 +685,17 @@
 				9CBBFBBD2C3AD6E000807F3E /* ContentView.swift in Sources */,
 				9C3F9EFD2C41739C00F9F8B0 /* QuickBlockView.swift in Sources */,
 				9C0D8D592C53C16D00613872 /* IconAndTextView.swift in Sources */,
+				9C3E11B22C7559810061C952 /* PageControl.swift in Sources */,
+				9C3E11B62C7559C70061C952 /* PageViewController.swift in Sources */,
 				9CC4E4152C4B669D0019D357 /* ViewControllerRepresentable.swift in Sources */,
 				9CBBFBBB2C3AD6E000807F3E /* shieldAppApp.swift in Sources */,
+				9C3E11B82C7559E00061C952 /* TutorialView.swift in Sources */,
 				9CC4E42B2C4CFBDD0019D357 /* DataModel.swift in Sources */,
 				9C3F9F012C46A41600F9F8B0 /* FamilyControlPermissionView.swift in Sources */,
 				9CBBFBE62C3AD70700807F3E /* BlockTimeView.swift in Sources */,
 				9C2835AD2C70C711002F8BBF /* LoadEnv.swift in Sources */,
 				9CC4E4132C4B662F0019D357 /* ViewController.swift in Sources */,
+				9C3E11BA2C755A430061C952 /* ShowTutorialView.swift in Sources */,
 				9C3F9EFF2C41F64500F9F8B0 /* RootView.swift in Sources */,
 				9CC4E4172C4B6A200019D357 /* FormWebView.swift in Sources */,
 				9C1424CE2C4FF09B005E873E /* StarRating.swift in Sources */,
