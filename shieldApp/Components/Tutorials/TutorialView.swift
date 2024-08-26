@@ -10,6 +10,8 @@ import SwiftUI
 struct TutorialView: View {
     let imageName: String
     let text: String
+    @AppStorage("hasSeenTutorial") private var hasSeenTutorial: Bool = false // チュートリアルを見たかどうか
+
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .center) {

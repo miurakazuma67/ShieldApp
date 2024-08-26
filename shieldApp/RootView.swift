@@ -29,6 +29,7 @@ struct RootView: View {
   @StateObject var router = NavigationRouter()
   @StateObject var model = DataModel.shared
   @StateObject var store = ManagedSettingsStore()
+  @AppStorage("hasSeenTutorial") private var hasSeenTutorial: Bool = false // チュートリアルを見たかどうか
 
   var body: some View {
     NavigationStack(path: $router.viewPath) {
