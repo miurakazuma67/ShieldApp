@@ -10,7 +10,7 @@ import FamilyControls
 
 struct QuickBlockView: View {
     @State private var selectedMinutes: Int = 0
-    let minutesRange = Array(1...90)
+    let minutesRange = Array(0...180)
     @State private var repeatEnabled: Bool = false
     @State private var totalHours: CGFloat = 30 // 1ヶ月の合計(目標)
     @State private var completedHours: CGFloat = 10 // 1ヶ月の合計
@@ -22,10 +22,7 @@ struct QuickBlockView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("集中しよう")
-                .font(.title2)
-                .padding(.top)
-            
+
             Button(
                 action: {
                     isDiscouragedPresented = true

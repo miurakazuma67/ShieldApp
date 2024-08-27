@@ -48,6 +48,8 @@ struct RootView: View {
             BlockTimeView()
           case .quickBlock:
             QuickBlockView()
+             .navigationTitle("スマホを封印して集中しよう！")
+             .navigationBarTitleDisplayMode(.inline)
              .environmentObject(router)
              .environmentObject(model)
           case .form:
