@@ -32,8 +32,9 @@ class TimerViewModel: ObservableObject {
         let elapsedTime = Date().timeIntervalSince(startTime)
         if elapsedTime >= totalTime {
             progress = 1.0
-            timer?.invalidate()
-            timer = nil
+            timer?.invalidate() // タイマーを無効化する
+            timer = nil // タイマーを停止
+            isFinished = true // Viewでモーダル表示する
         } else {
             progress = elapsedTime / totalTime
             elapsedTimeString = formatTime(elapsedTime)

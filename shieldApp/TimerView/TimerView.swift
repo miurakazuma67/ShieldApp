@@ -65,6 +65,7 @@ struct TimerView: View {
 //                    .font(.title2)
 //                    .padding(.top)
             } //VStack
+            .padding() // 少しだけ余白
             if viewModel.isFinished {
                 FinishModal(showModal: $viewModel.isFinished)
             }

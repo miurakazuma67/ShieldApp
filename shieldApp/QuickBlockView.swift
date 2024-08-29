@@ -9,9 +9,8 @@ import FamilyControls
 import SwiftUI
 
 struct QuickBlockView: View {
-  @State private var selectedMinutes: Int = 0
-  let minutesRange = Array(0...180)
-  @State private var repeatEnabled: Bool = false
+  @State private var selectedMinutes: Int = 0 // ピッカーで選択した時間(Timerに渡)
+  let minutesRange = Array(0...180) // 時間の選択範囲
   @State private var totalHours: CGFloat = 30  // 1ヶ月の合計(目標)
   @State private var completedHours: CGFloat = 10  // 1ヶ月の合計
   @State private var isDiscouragedPresented = false  // アプリ制限画面表示用のフラグ
@@ -53,7 +52,7 @@ struct QuickBlockView: View {
       }  // Button
       .padding(.top, 10)
         if isAlertMessageShow {
-            Text("↑から制限するアプリを選択してください！")
+            Text("↑ここから制限するアプリを選択してください！")
                 .font(.caption)
                 .foregroundStyle(Color.red)
         }

@@ -62,8 +62,8 @@ struct AnimatedCheckmarkView: View {
             .animation(.linear(duration: 1), value: isCircleDrawn)
 
             if isUnderTextShown {
-                Text("お疲れ様！学習が完了しました")
-                    .font(.title2)
+                Text("お疲れ様でした！学習を記録しましよう")
+                    .font(.caption)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .transition(.opacity)
