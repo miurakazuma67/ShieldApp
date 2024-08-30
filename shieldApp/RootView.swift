@@ -49,6 +49,7 @@ struct RootView: View {
           case .quickBlock:
             QuickBlockView()
              .navigationTitle("スマホを封印して集中しよう！")
+             .navigationBarBackButtonHidden(true)
              .navigationBarTitleDisplayMode(.inline)
              .environmentObject(router)
              .environmentObject(model)

@@ -8,7 +8,7 @@ import SwiftUI
 
 struct TimerView: View {
     @State private var isFinished: Bool = false  // 完了かどうか
-    @StateObject var viewModel = TimerViewModel()
+    @StateObject var viewModel = TimerViewModel() // Timer VM
     @State private var totalMinutes: Int // 遷移元画面で設定した時間
 
     init(totalMinutes: Int) {
