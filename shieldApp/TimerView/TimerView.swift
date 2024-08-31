@@ -36,19 +36,43 @@ struct TimerView: View {
     }
 
     var body: some View {
+        Text(String("制限時間: \(totalMinutes)分"))
+            .font(.headline)
         ZStack {
             VStack {
                 ZStack {
-                    Circle()
-                        .stroke(lineWidth: 8)
-                        .foregroundColor(Color.gray)
+//                    Circle()
+//                        .stroke(lineWidth: 8)
+//                        .foregroundColor(Color.gray)
+//
+//                    Circle()
+//                        .trim(from: 0.0, to: CGFloat(viewModel.progress))
+//                        .stroke(style: StrokeStyle(lineWidth: 8, lineCap: .round, lineJoin: .round))
+//                        .foregroundColor(Color.green)
+//                        .opacity(0.6) // 少し薄く
+//                        .rotationEffect(Angle(degrees: -90))  // 0度の位置を上にする
 
-                    Circle()
-                        .trim(from: 0.0, to: CGFloat(viewModel.progress))
-                        .stroke(style: StrokeStyle(lineWidth: 8, lineCap: .round, lineJoin: .round))
-                        .foregroundColor(Color.green)
-                        .opacity(0.6) // 少し薄く
-                        .rotationEffect(Angle(degrees: -90))  // 0度の位置を上にする
+                    ZStack {
+                        // 背景の円
+                        Circle()
+                            .stroke(lineWidth: 8)
+                            .foregroundColor(Color.gray.opacity(0.3)) // 薄いグレー
+                            .shadow(radius: 4) // 影を追加して立体感を出す
+
+                        // 進捗を示す円
+                        Circle()
+                            .trim(from: 0.0, to: CGFloat(viewModel.progress))
+                            .stroke(style: StrokeStyle(lineWidth: 8, lineCap: .round, lineJoin: .round))
+                            .foregroundColor(Color.green)
+                            .opacity(0.7) // 進捗円の透明度
+                            .rotationEffect(Angle(degrees: -90)) // 円を90度回転
+
+                        // 内側の白い円
+                        Circle()
+                            .fill(Color.white) // 内側の白い円
+                            .padding(4) // パディングで少し内側に
+                    }
+                    .shadow(radius: 4) // 全体に影を追加して浮き上がる感じ
 
                     VStack {
                         IconAndTextView(imageName: "clock.arrow.circlepath", text: "終了時間", spacing: 4)
@@ -60,14 +84,12 @@ struct TimerView: View {
                     }
                 }
                 .padding()
-
-//                Text("経過時間: \(viewModel.elapsedTimeString)")
-//                    .font(.title2)
-//                    .padding(.top)
             } //VStack
             .padding() // 少しだけ余白
             if viewModel.isFinished {
                 FinishModal(showModal: $viewModel.isFinished)
+                    .transition(.move(edge: .bottom))
+                    .animation(.easeInOut(duration: 3.0), value: viewModel.isFinished)
             }
         }
         .onAppear {

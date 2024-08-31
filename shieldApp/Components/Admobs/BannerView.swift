@@ -24,7 +24,6 @@ class GADBannerViewController: UIViewController, GADBannerViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(adUnitID)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -50,7 +49,7 @@ class GADBannerViewController: UIViewController, GADBannerViewDelegate {
         let bannerWidth = view.frame.size.width
         bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(bannerWidth)
 
-        let request = GADRequest()
+        let request = GADRequest() // 
         request.scene = view.window?.windowScene
         bannerView.load(request)
 
