@@ -16,8 +16,8 @@ enum ViewPath: Hashable {
     case finish     // スクリーンタイムAPI許可画面
     case blockTime  // 時間制限画面
     case quickBlock  // クイックブロック画面
-    case form  // お問い合わせフォーム画面
-    case timer(totalMinutes: Int) // timer
+    case form        // お問い合わせフォーム画面
+    case timer(totalMinutes: Int)           // timer
 }
 
 class NavigationRouter: ObservableObject {
@@ -29,7 +29,8 @@ struct RootView: View {
   @StateObject var router = NavigationRouter()
   @StateObject var model = DataModel.shared
   @StateObject var store = ManagedSettingsStore()
-  @AppStorage("hasSeenTutorial") private var hasSeenTutorial: Bool = false // チュートリアルを見たかどうか
+  @AppStorage("hasSeenTutorial") private var hasSeenTutorial: Bool = false
+    // チュートリアルを見たかどうか
 
   var body: some View {
     NavigationStack(path: $router.viewPath) {
@@ -39,7 +40,7 @@ struct RootView: View {
           }, label: {
               Text("クイックブロック")
           })
-      }  // 空のVStack
+      } // 空のVStack
         .navigationDestination(for: ViewPath.self) { value in
           switch value {
           case .content:
@@ -80,7 +81,3 @@ struct RootView: View {
     }
   }
 }
-
-//#Preview {
-//  RootView()
-//}

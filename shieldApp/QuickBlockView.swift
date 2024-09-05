@@ -97,7 +97,6 @@ struct QuickBlockView: View {
         }
       )
       .padding()
-//      .disabled(!isDiscouragedSelected)  // 何もアプリを選んでないときは非活性
     }
     .padding(.top, 80)
     //        BannerView()
@@ -112,9 +111,9 @@ struct QuickBlockView: View {
       // アプリケーションの利用制限を解除
       DataModel.shared.clearShieldRestrictions()
       // 2. 完了モーダルの表示
-
+        
       // 3. メニュー画面に遷移する
-
+        
     }
   }
 }

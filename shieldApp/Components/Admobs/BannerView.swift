@@ -19,7 +19,7 @@ struct BannerView: UIViewControllerRepresentable {
 
 class GADBannerViewController: UIViewController, GADBannerViewDelegate {
     var bannerView: GADBannerView!
-    // TODO: FIX
+
     let adUnitID = AppConst.env.value("AD_UNIT_ID")
 
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class GADBannerViewController: UIViewController, GADBannerViewDelegate {
         let bannerWidth = view.frame.size.width
         bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(bannerWidth)
 
-        let request = GADRequest() // 
+        let request = GADRequest() //
         request.scene = view.window?.windowScene
         bannerView.load(request)
 

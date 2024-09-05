@@ -38,6 +38,7 @@ struct TimerView: View {
     var body: some View {
         Text(String("制限時間: \(totalMinutes)分"))
             .font(.headline)
+
         ZStack {
             VStack {
                 ZStack {
