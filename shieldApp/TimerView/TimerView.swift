@@ -43,12 +43,12 @@ struct TimerView: View {
             VStack {
                 ZStack {
                     Circle()
-                        .stroke(lineWidth: 50)
+                        .stroke(lineWidth: 25)
                         .foregroundColor(Color.gray)
 
                     Circle()
                         .trim(from: 0.0, to: CGFloat(viewModel.progress))
-                        .stroke(style: StrokeStyle(lineWidth: 50, lineCap: .round, lineJoin: .round))
+                        .stroke(style: StrokeStyle(lineWidth: 25, lineCap: .round, lineJoin: .round))
                         .foregroundColor(Color.green)
                         .opacity(0.6) // 少し薄く
                         .rotationEffect(Angle(degrees: -90))  // 0度の位置を上にする
@@ -57,8 +57,6 @@ struct TimerView: View {
                         IconAndTextView(imageName: "clock.arrow.circlepath", text: "終了時間", spacing: 4)
                             .frame(height: 20)  // HStack自体の高さを指定
                         Text(calculateFutureTime(totalMinutes: totalMinutes))
-                            .font(.largeTitle)
-                        Text(String(format: "%.0f%%", viewModel.progress * 100))
                             .font(.largeTitle)
                     }
                 }
