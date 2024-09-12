@@ -62,12 +62,19 @@ struct AnimatedCheckmarkView: View {
             .animation(.linear(duration: 1), value: isCircleDrawn)
 
             if isUnderTextShown {
-                Text("お疲れ様でした！\n学習を記録しましよう") //改行したい
-                    .multilineTextAlignment(.center) // 文字を真ん中よせ
-                    .font(.caption)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .transition(.opacity)
+                VStack(alignment: .center) {
+                    Text("お疲れ様でした！\n学習を記録しましよう") //改行したい
+                        .multilineTextAlignment(.center) // 文字を真ん中よせ
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .transition(.opacity)
+                    Button(action: {
+                        router.viewPath.append(.save)
+                    }) {
+                        Text("学習を記録する")
+                    }
+                }
             }
         }
         .animation(.easeIn(duration: 0.5), value: isUnderTextShown)

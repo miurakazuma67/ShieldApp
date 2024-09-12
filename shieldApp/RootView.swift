@@ -18,6 +18,7 @@ enum ViewPath: Hashable {
     case quickBlock  // クイックブロック画面
     case form        // お問い合わせフォーム画面
     case timer(totalMinutes: Int)           // timer
+    case save // 記録画面
 }
 
 class NavigationRouter: ObservableObject {
@@ -63,6 +64,8 @@ struct RootView: View {
                   .navigationBarTitleDisplayMode(.inline)
           case .finish:
               FinishView()
+          case .save:
+              SaveDataView()
           }
         }
         .environmentObject(router)

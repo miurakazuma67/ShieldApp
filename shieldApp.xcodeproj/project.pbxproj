@@ -264,6 +264,23 @@
 			path = Tutorials;
 			sourceTree = "<group>";
 		};
+		9CAE61C22C925BA700ED1354 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				9CAE61BC2C91DD1F00ED1354 /* SaveDataView.swift */,
+				9CAE61BE2C91DD4500ED1354 /* SelectTimeWheelView.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		9CAE61C32C925BC500ED1354 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				9CBBFBE52C3AD70700807F3E /* BlockTimeView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
 		9CAEDC897DA18086C574A201 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,12 +328,11 @@
 				9C0D8D622C68F91B00613872 /* Extensions */,
 				9CBBFBBA2C3AD6E000807F3E /* shieldAppApp.swift */,
 				9CBBFBBC2C3AD6E000807F3E /* ContentView.swift */,
-				9CAE61BC2C91DD1F00ED1354 /* SaveDataView.swift */,
-				9CAE61BE2C91DD4500ED1354 /* SelectTimeWheelView.swift */,
+				9CAE61C22C925BA700ED1354 /* Report */,
 				9CBBFBBE2C3AD6E200807F3E /* Assets.xcassets */,
 				9CBBFBC02C3AD6E200807F3E /* shieldApp.entitlements */,
 				9CBBFBC12C3AD6E200807F3E /* Preview Content */,
-				9CBBFBE52C3AD70700807F3E /* BlockTimeView.swift */,
+				9CAE61C32C925BC500ED1354 /* Schedule */,
 				9CC4E4292C4CFBCD0019D357 /* Model */,
 				9C3F9EFC2C41739C00F9F8B0 /* QuickBlockView.swift */,
 				9C3F9F002C46A41600F9F8B0 /* FamilyControlPermissionView.swift */,
