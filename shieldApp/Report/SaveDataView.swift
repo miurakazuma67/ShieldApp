@@ -23,7 +23,7 @@ struct SaveDataView: View {
                 Form {
                     DatePicker("Date", selection: $date, displayedComponents: .date)
                     HStack {
-                        Text("Study Time")
+                        Text("学習時間")
                         Spacer()
                         Button(action: {
                             isTimePickerOpen.toggle()
@@ -80,6 +80,7 @@ struct SaveDataView: View {
         let studyTimeInMinutes = Double(studyHour * 60 + studyMinute)
         let newData = StudyData(date: date, studyTime: studyTimeInMinutes, category: category, color: color)
         studyDataList.append(newData)
+        print("🐈studydata: \(studyDataList)") // データの中身チェック　あとで消す
         resetForm()
     }
 

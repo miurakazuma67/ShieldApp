@@ -10,6 +10,7 @@ struct TimerView: View {
     @State private var isFinished: Bool = false  // 完了かどうか
     @StateObject var viewModel = TimerViewModel() // Timer VM
     @State private var totalMinutes: Int // 遷移元画面で設定した時間
+    @EnvironmentObject var router: NavigationRouter
 
     init(totalMinutes: Int) {
         self.totalMinutes = totalMinutes
@@ -43,13 +44,13 @@ struct TimerView: View {
             VStack {
                 ZStack {
                     Circle()
-                        .stroke(lineWidth: 25)
-                        .foregroundColor(Color.gray)
+                        .stroke(lineWidth: 20)
+                        .foregroundColor(Color.lightThemeColor)
 
                     Circle()
                         .trim(from: 0.0, to: CGFloat(viewModel.progress))
-                        .stroke(style: StrokeStyle(lineWidth: 25, lineCap: .round, lineJoin: .round))
-                        .foregroundColor(Color.green)
+                        .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
+                        .foregroundColor(Color.circleFillColor)
                         .opacity(0.6) // 少し薄く
                         .rotationEffect(Angle(degrees: -90))  // 0度の位置を上にする
 
@@ -67,6 +68,7 @@ struct TimerView: View {
                 FinishModal(showModal: $viewModel.isFinished)
                     .transition(.move(edge: .bottom))
                     .animation(.easeInOut(duration: 3.0), value: viewModel.isFinished)
+                    .environmentObject(router)
             }
         }
         .onAppear {

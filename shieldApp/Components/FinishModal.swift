@@ -7,6 +7,7 @@
 
 import SwiftUI
 struct FinishModal: View {
+    @EnvironmentObject var router: NavigationRouter // Router
     @Binding var showModal: Bool // モーダル表示用フラグ
 
     var body: some View {
@@ -36,6 +37,7 @@ struct FinishModal: View {
 
 // アニメーションするチェックマーク
 struct AnimatedCheckmarkView: View {
+    @EnvironmentObject var router: NavigationRouter // Router
     @State private var isCircleDrawn = false
     @State private var isCheckMarkShown = false
     @State private var isUnderTextShown = false

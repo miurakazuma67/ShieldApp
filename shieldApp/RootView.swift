@@ -62,6 +62,7 @@ struct RootView: View {
                   .navigationBarBackButtonHidden(true)
                   .navigationTitle("ブロック中")
                   .navigationBarTitleDisplayMode(.inline)
+                  .environmentObject(router)
           case .finish:
               FinishView()
           case .save:
