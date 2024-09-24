@@ -28,5 +28,6 @@ extension Color {
 extension Color {
   static let circleFillColor = Color("circleFillColor")  // timer circle メインカラー
   static let lightThemeColor = Color("lightThemeColor")  // timer circle サブカラー
-//  static let mainRed = Color("mainRed") // mainRed
+  static let circleShadowColor = Color("circleShadowColor")
+  static let aaaRed = Color("primaryRed") // mainRed
 }

@@ -53,6 +53,10 @@ struct TimerView: View {
                         .foregroundColor(Color.circleFillColor)
                         .opacity(0.6) // 少し薄く
                         .rotationEffect(Angle(degrees: -90))  // 0度の位置を上にする
+                        .shadow(
+                            color: Color.circleShadowColor, 
+                            radius: 200,
+                            x: CGFloat(10), y: CGFloat(10))
 
                     VStack {
                         IconAndTextView(imageName: "clock.arrow.circlepath", text: "終了時間", spacing: 4)

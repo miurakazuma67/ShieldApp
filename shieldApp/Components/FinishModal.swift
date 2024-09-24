@@ -48,11 +48,11 @@ struct AnimatedCheckmarkView: View {
                 Circle()
                     .stroke(lineWidth: 5)
                     .frame(width: 100, height: 100)
-                    .foregroundColor(isCircleDrawn ? .green : .clear)
+                    .foregroundColor(isCircleDrawn ? Color.circleFillColor : .clear)
                     .overlay(
                         Image(systemName: "checkmark")
                             .font(.system(size: 40, weight: .bold))
-                            .foregroundColor(.green)
+                            .foregroundColor(Color.circleFillColor)
                             .opacity(isCheckMarkShown ? 1 : 0)
                             .scaleEffect(isCheckMarkShown ? 1 : 0.1)
                     )

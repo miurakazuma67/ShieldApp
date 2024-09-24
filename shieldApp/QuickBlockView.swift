@@ -54,7 +54,7 @@ struct QuickBlockView: View {
         if isAlertMessageShow {
             Text("↑ここから制限するアプリを選択してください！")
                 .font(.caption)
-                .foregroundStyle(Color.red)
+                .foregroundStyle(Color.aaaRed)
         }
       Spacer()
       VStack
