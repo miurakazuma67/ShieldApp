@@ -19,6 +19,8 @@ enum ViewPath: Hashable {
     case form        // お問い合わせフォーム画面
     case timer(totalMinutes: Int)           // timer
     case save // 記録画面
+    case recordList // 学習記録一覧
+    case graph // グラフ画面
 }
 
 class NavigationRouter: ObservableObject {
@@ -66,7 +68,16 @@ struct RootView: View {
           case .finish:
               FinishView()
           case .save:
-              SaveDataView()
+//              SaveDataView()
+              RecordEntryView()
+                  .navigationBarBackButtonHidden(true)
+                  .environmentObject(router)
+//                  .navigationTitle("学習記録")
+          case .recordList:
+              StudyRecordListView()
+                  .environmentObject(router)
+          case .graph:
+              StudySummaryTabView()
           }
         }
         .environmentObject(router)

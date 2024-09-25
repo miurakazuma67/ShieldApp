@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// 使ってない
 /// SwiftData保存処理を実装したサンプルビュー memoがない
 struct SaveDataView: View {
     @State private var studyDataList: [StudyData] = []
