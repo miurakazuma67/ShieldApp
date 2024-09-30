@@ -49,7 +49,7 @@ struct WeeklyStudySummaryView: View {
                 
                 VStack {
                     Text("今月")
-                    Text(totalThisMonth().formatted())
+                    Text(String(format: "%.1f", totalThisMonth())) // 小数点1桁まで表示
                         .font(.headline)
                         .foregroundColor(.black)
                 }
@@ -59,7 +59,7 @@ struct WeeklyStudySummaryView: View {
                 
                 VStack {
                     Text("総計")
-                    Text(totalThisYear().formatted())
+                    Text(String(format: "%.1f", totalThisYear())) // 小数点1桁まで表示
                         .font(.headline)
                         .foregroundColor(.black)
                 }
@@ -86,8 +86,10 @@ struct WeeklyStudySummaryView: View {
             }
             .chartYAxis {
                 AxisMarks { value in
-                    if let doubleValue = value.as(Double.self) {
-                        Text(String(format: "%.1f", doubleValue))
+                    AxisValueLabel {
+                        if let doubleValue = value.as(Double.self) {
+                            Text(String(format: "%.1f", doubleValue)) // 軸の値をフォーマットして表示
+                        }
                     }
                 }
             }
@@ -165,13 +167,13 @@ struct MonthlyStudySummaryView: View {
 
             Chart(calculateMonthlyTotal(studyRecords: studyRecords), id: \.date) { record in
                 BarMark(
-                    x: .value("日付", record.date, unit: .day),
+                    x: .value("日付", record.date, unit: .month),
                     y: .value("勉強時間 (時間)", record.totalHours)
                 )
             }
             .chartXAxis {
-                AxisMarks(values: .stride(by: .day)) { value in
-                    AxisValueLabel(format: .dateTime.day())
+                AxisMarks(values: .stride(by: .month)) { value in
+                    AxisValueLabel(format: .dateTime.month())
                 }
             }
             .chartYAxis {
@@ -199,7 +201,7 @@ struct MonthlyStudySummaryView: View {
             calendar.startOfDay(for: record.date)
         }
 
-        return (0..<30).compactMap { offset in
+        return (0..<12).compactMap { offset in
             if let date = calendar.date(byAdding: .day, value: -offset, to: today) {
                 let totalMinutes = groupedRecords[calendar.startOfDay(for: date)]?.reduce(0) { $0 + ($1.studyHours * 60 + $1.studyMinutes) } ?? 0
                 return (date, Double(totalMinutes) / 60)
@@ -221,13 +223,13 @@ struct YearlyStudySummaryView: View {
 
             Chart(calculateYearlyTotal(studyRecords: studyRecords), id: \.date) { record in
                 BarMark(
-                    x: .value("月", record.date, unit: .month),
+                    x: .value("Year", record.date, unit: .year),
                     y: .value("勉強時間 (時間)", record.totalHours)
                 )
             }
             .chartXAxis {
-                AxisMarks(values: .stride(by: .month)) { value in
-                    AxisValueLabel(format: .dateTime.month())
+                AxisMarks(values: .stride(by: .year)) { value in
+                    AxisValueLabel(format: .dateTime.year())
                 }
             }
             .chartYAxis {
