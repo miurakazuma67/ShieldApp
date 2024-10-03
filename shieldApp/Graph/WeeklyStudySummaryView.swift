@@ -10,7 +10,7 @@ import Foundation
 import Charts
 import SwiftData
 
-// 日ごと、週ごと、月毎の合計時間を表示を切り替えるenum
+// 日ごと、週ごと、月ごとの合計時間を表示を切り替えるenum
 enum SummaryType {
     case daily, weekly, monthly, yearly
     
@@ -23,16 +23,17 @@ enum SummaryType {
         }
     }
     
+    // studyRecordsを渡して、それに基づいて合計時間を計算
     func calculateTotalValue(for studyRecords: [StudyRecord]) -> Double {
         switch self {
         case .daily:
-            return calculateTotalToday(studyRecords)
+            return calculateTotalToday(studyRecords: studyRecords)
         case .weekly:
-            return calculateTotalThisWeek(studyRecords)
+            return calculateTotalThisWeek(studyRecords: studyRecords)
         case .monthly:
-            return calculateTotalThisMonth(studyRecords)
+            return calculateTotalThisMonth(studyRecords: studyRecords)
         case .yearly:
-            return calculateTotalThisYear(studyRecords)
+            return calculateTotalThisYear(studyRecords: studyRecords)
         }
     }
 }
@@ -46,7 +47,7 @@ struct WeeklyStudySummaryView: View {
             HStack {
                 VStack {
                     Text("今日")
-                    Text(totalToday().formatted())
+                    Text(calculateTotalToday(studyRecords: studyRecords).formatted())
                         .font(.headline)
                         .foregroundColor(.black)
                 }
@@ -56,7 +57,7 @@ struct WeeklyStudySummaryView: View {
                 
                 VStack {
                     Text("今月")
-                    Text(String(format: "%.1f", totalThisMonth())) // 小数点1桁まで表示
+                    Text(String(format: "%.1f", calculateTotalThisMonth(studyRecords: studyRecords))) // 小数点1桁まで表示
                         .font(.headline)
                         .foregroundColor(.black)
                 }
@@ -66,7 +67,7 @@ struct WeeklyStudySummaryView: View {
                 
                 VStack {
                     Text("総計")
-                    Text(String(format: "%.1f", totalThisYear())) // 小数点1桁まで表示
+                    Text(String(format: "%.1f", calculateTotalThisYear(studyRecords: studyRecords))) // 小数点1桁まで表示
                         .font(.headline)
                         .foregroundColor(.black)
                 }
@@ -108,7 +109,7 @@ struct WeeklyStudySummaryView: View {
     }
 
     // 今日の勉強時間の合計を計算
-    private func calculateTotalToday() -> Double {
+    private func calculateTotalToday(studyRecords: [StudyRecord]) -> Double {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
         
@@ -119,7 +120,7 @@ struct WeeklyStudySummaryView: View {
     }
 
     // 今月の勉強時間の合計を計算
-    private func calculateTotalThisMonth() -> Double {
+    private func calculateTotalThisMonth(studyRecords: [StudyRecord]) -> Double {
         let calendar = Calendar.current
         let today = Date()
         let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: today))!
@@ -131,7 +132,7 @@ struct WeeklyStudySummaryView: View {
     }
 
     // 今年の勉強時間の合計を計算
-    private func calculateTotalThisYear() -> Double {
+    private func calculateTotalThisYear(studyRecords: [StudyRecord]) -> Double {
         let calendar = Calendar.current
         let today = Date()
         let startOfYear = calendar.date(from: calendar.dateComponents([.year], from: today))!
