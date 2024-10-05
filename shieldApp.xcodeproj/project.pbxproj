@@ -40,12 +40,10 @@
 		9CAE61C52CA31AFC00ED1354 /* RecordEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61C42CA31AFC00ED1354 /* RecordEntryView.swift */; };
 		9CAE61C72CA31DD900ED1354 /* StudyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61C62CA31DD900ED1354 /* StudyRecord.swift */; };
 		9CAE61C92CA31F1900ED1354 /* StudyRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61C82CA31F1900ED1354 /* StudyRecordListView.swift */; };
-		9CAE61CC2CA4487100ED1354 /* StudySummaryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61CB2CA4487100ED1354 /* StudySummaryTabView.swift */; };
 		9CAE61CE2CABDA8200ED1354 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61CD2CABDA8200ED1354 /* Date+.swift */; };
-		9CAE61D02CAC373000ED1354 /* YearlyStudySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61CF2CAC373000ED1354 /* YearlyStudySummaryView.swift */; };
-		9CAE61D22CAC377A00ED1354 /* MonthlyStudySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61D12CAC377A00ED1354 /* MonthlyStudySummaryView.swift */; };
-		9CAE61D42CAC37AC00ED1354 /* WeeklyStudySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61D32CAC37AC00ED1354 /* WeeklyStudySummaryView.swift */; };
 		9CAE61D62CAC398100ED1354 /* SummaryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61D52CAC398100ED1354 /* SummaryItemView.swift */; };
+		9CAE61D82CAFCFE400ED1354 /* StudyTimeGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61D72CAFCFE300ED1354 /* StudyTimeGraphView.swift */; };
+		9CAE61DA2CB1676500ED1354 /* StudyTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61D92CB1676500ED1354 /* StudyTimeViewModel.swift */; };
 		9CBBFBBB2C3AD6E000807F3E /* shieldAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBBA2C3AD6E000807F3E /* shieldAppApp.swift */; };
 		9CBBFBBD2C3AD6E000807F3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBBC2C3AD6E000807F3E /* ContentView.swift */; };
 		9CBBFBBF2C3AD6E200807F3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CBBFBBE2C3AD6E200807F3E /* Assets.xcassets */; };
@@ -143,12 +141,10 @@
 		9CAE61C42CA31AFC00ED1354 /* RecordEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEntryView.swift; sourceTree = "<group>"; };
 		9CAE61C62CA31DD900ED1354 /* StudyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRecord.swift; sourceTree = "<group>"; };
 		9CAE61C82CA31F1900ED1354 /* StudyRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRecordListView.swift; sourceTree = "<group>"; };
-		9CAE61CB2CA4487100ED1354 /* StudySummaryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySummaryTabView.swift; sourceTree = "<group>"; };
 		9CAE61CD2CABDA8200ED1354 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
-		9CAE61CF2CAC373000ED1354 /* YearlyStudySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyStudySummaryView.swift; sourceTree = "<group>"; };
-		9CAE61D12CAC377A00ED1354 /* MonthlyStudySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyStudySummaryView.swift; sourceTree = "<group>"; };
-		9CAE61D32CAC37AC00ED1354 /* WeeklyStudySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStudySummaryView.swift; sourceTree = "<group>"; };
 		9CAE61D52CAC398100ED1354 /* SummaryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryItemView.swift; sourceTree = "<group>"; };
+		9CAE61D72CAFCFE300ED1354 /* StudyTimeGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeGraphView.swift; sourceTree = "<group>"; };
+		9CAE61D92CB1676500ED1354 /* StudyTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeViewModel.swift; sourceTree = "<group>"; };
 		9CBBFBB72C3AD6E000807F3E /* shieldApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shieldApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CBBFBBA2C3AD6E000807F3E /* shieldAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shieldAppApp.swift; sourceTree = "<group>"; };
 		9CBBFBBC2C3AD6E000807F3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -305,11 +301,9 @@
 		9CAE61CA2CA4484B00ED1354 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
-				9CAE61CB2CA4487100ED1354 /* StudySummaryTabView.swift */,
-				9CAE61CF2CAC373000ED1354 /* YearlyStudySummaryView.swift */,
-				9CAE61D12CAC377A00ED1354 /* MonthlyStudySummaryView.swift */,
-				9CAE61D32CAC37AC00ED1354 /* WeeklyStudySummaryView.swift */,
 				9CAE61D52CAC398100ED1354 /* SummaryItemView.swift */,
+				9CAE61D72CAFCFE300ED1354 /* StudyTimeGraphView.swift */,
+				9CAE61D92CB1676500ED1354 /* StudyTimeViewModel.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -739,15 +733,15 @@
 				9C2835A62C701AB0002F8BBF /* BannerView.swift in Sources */,
 				9CAE61BF2C91DD4500ED1354 /* SelectTimeWheelView.swift in Sources */,
 				9CAE61BD2C91DD1F00ED1354 /* SaveDataView.swift in Sources */,
+				9CAE61D82CAFCFE400ED1354 /* StudyTimeGraphView.swift in Sources */,
 				9CAE61C72CA31DD900ED1354 /* StudyRecord.swift in Sources */,
 				9C3E11B42C7559A20061C952 /* PageView.swift in Sources */,
 				9CAE61C92CA31F1900ED1354 /* StudyRecordListView.swift in Sources */,
 				9CAE61CE2CABDA8200ED1354 /* Date+.swift in Sources */,
-				9CAE61CC2CA4487100ED1354 /* StudySummaryTabView.swift in Sources */,
-				9CAE61D22CAC377A00ED1354 /* MonthlyStudySummaryView.swift in Sources */,
 				9C0D8D572C53C12200613872 /* TimerView.swift in Sources */,
 				9C0D8D642C68F94000613872 /* Color+.swift in Sources */,
 				9C0D8D612C619B8100613872 /* FinishModal.swift in Sources */,
+				9CAE61DA2CB1676500ED1354 /* StudyTimeViewModel.swift in Sources */,
 				9C0D8D552C53C11600613872 /* TimerViewModel.swift in Sources */,
 				9C0FD2C22C46AABB00A63319 /* FinishView.swift in Sources */,
 				9CBBFBBD2C3AD6E000807F3E /* ContentView.swift in Sources */,
@@ -767,9 +761,7 @@
 				9CAE61D62CAC398100ED1354 /* SummaryItemView.swift in Sources */,
 				9C3E11BA2C755A430061C952 /* ShowTutorialView.swift in Sources */,
 				9C3F9EFF2C41F64500F9F8B0 /* RootView.swift in Sources */,
-				9CAE61D02CAC373000ED1354 /* YearlyStudySummaryView.swift in Sources */,
 				9CC4E4172C4B6A200019D357 /* FormWebView.swift in Sources */,
-				9CAE61D42CAC37AC00ED1354 /* WeeklyStudySummaryView.swift in Sources */,
 				9C1424CE2C4FF09B005E873E /* StarRating.swift in Sources */,
 				9C0D8D7E2C6A0EEF00613872 /* WorkLogMonitor.swift in Sources */,
 				9C0D8D7C2C6980DD00613872 /* ThemeColorButton.swift in Sources */,

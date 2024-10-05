@@ -30,4 +30,5 @@ extension Color {
   static let lightThemeColor = Color("lightThemeColor")  // timer circle サブカラー
   static let circleShadowColor = Color("circleShadowColor")
   static let aaaRed = Color("primaryRed") // mainRed
+  static let averageLineColor = Color("averageLineColor") // グラフの平均の線の色
 }

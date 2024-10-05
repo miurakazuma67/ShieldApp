@@ -77,7 +77,7 @@ struct RootView: View {
               StudyRecordListView()
                   .environmentObject(router)
           case .graph:
-              StudySummaryTabView()
+              StudyTimeGraphView()
           }
         }
         .environmentObject(router)
