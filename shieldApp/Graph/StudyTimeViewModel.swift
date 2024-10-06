@@ -15,8 +15,26 @@ class StudyTimeViewModel: ObservableObject {
     let totalStudyCount: Int = 12112
     let todayStudyCount: Int = 12
 
+    // 一週間分の日付を取得する関数
+    func getLastWeekDates(from date: Date) -> [String] {
+        var dates: [String] = []
+        let calendar = Calendar.current
+        
+        // 今日を含む過去6日間分の日付を取得（計7日間）
+        for i in 0..<7 {
+            if let pastDate = calendar.date(byAdding: .day, value: -i, to: date) {
+                let formattedDate = DateFormatter.customFormatter.string(from: pastDate)
+                dates.append(formattedDate)
+            }
+        }
+        return dates.reversed() // 昇順に表示するために逆順に
+    }
+
     init() {
         let todayDate = DateFormatter.customFormatter.string(from: Date()) // 今日の日付取得
+        
+        // 今日を基準に一週間分の日付を取得
+        let weekDates = getLastWeekDates(from: Date()) // もう少し簡単にできそう
         let sampleData: [(String, Double)] = [
             ("10/25", 7), ("10/26", 8), ("10/27", 6), ("10/28", 10),
             ("10/29", 9), ("10/30", 12), ("10/31", 7)
@@ -24,9 +42,6 @@ class StudyTimeViewModel: ObservableObject {
 
         self.weeklyData = sampleData.map { (date, count) in
             let isToday = (date == todayDate)
-            print("🐈TodayDate: \(todayDate)")
-            print("🐈date: \(date)")
-            print("🐈isToday: \(isToday)")
             return (date: date, count: count, isToday: isToday, isSelected: false)
         }
     }
