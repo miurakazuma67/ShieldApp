@@ -37,7 +37,7 @@ class StudyTimeViewModel: ObservableObject {
         let weekDates = getLastWeekDates(from: Date()) // もう少し簡単にできそう
         let sampleData: [(String, Double)] = [
             ("10/25", 7), ("10/26", 8), ("10/27", 6), ("10/28", 10),
-            ("10/29", 9), ("10/30", 12), ("10/31", 7)
+            ("10/29", 9), ("10/30", 10), ("10/31", 7)
         ]
 
         self.weeklyData = sampleData.map { (date, count) in

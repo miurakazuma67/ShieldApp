@@ -15,9 +15,6 @@ struct StudyRecordListView: View {
 
     var body: some View {
         NavigationView {
-            Button("Show Graph") {
-                router.viewPath.append(.graph) // グラフ表示
-            }
             List {
                 ForEach(studyRecords) { record in
                     VStack(alignment: .leading, spacing: 8) {
@@ -61,7 +58,7 @@ struct StudyRecordListView: View {
             .toolbar {
                 EditButton() // 編集モードボタン（削除用）
             }
-        }
+        } // NavigaitonView
     }
 
     // データ削除のためのメソッド
