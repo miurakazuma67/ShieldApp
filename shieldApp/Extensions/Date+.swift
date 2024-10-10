@@ -19,3 +19,19 @@ extension Date {
     }
 }
 
+// .date表記を日本語表記の日付フォーマットに変換するメソッド
+func dateToJapaneseString(_ date: Date) -> String {
+    let calendar = Calendar.current
+    let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "ja_JP")
+    
+    if calendar.isDateInToday(date) {
+        return "今日"
+    } else if calendar.isDateInYesterday(date) {
+        return "昨日"
+    } else {
+        formatter.dateFormat = "yyyy年MM月dd日（EEEE）" // 日付と曜日を表示
+        return formatter.string(from: date)
+    }
+}
+

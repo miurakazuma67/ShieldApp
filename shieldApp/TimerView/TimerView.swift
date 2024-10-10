@@ -10,6 +10,7 @@ struct TimerView: View {
     @State private var isFinished: Bool = false  // 完了かどうか
     @StateObject var viewModel = TimerViewModel() // Timer VM
     @State private var totalMinutes: Int // 遷移元画面で設定した時間
+    @State private var futureTime: String = "" // 計算された終了時刻を保持する変数
     @EnvironmentObject var router: NavigationRouter
 
     init(totalMinutes: Int) {
@@ -61,7 +62,7 @@ struct TimerView: View {
                     VStack {
                         IconAndTextView(imageName: "clock.arrow.circlepath", text: "終了時間", spacing: 4)
                             .frame(height: 20)  // HStack自体の高さを指定
-                        Text(calculateFutureTime(totalMinutes: totalMinutes))
+                        Text(futureTime) //終了時刻
                             .font(.largeTitle)
                     }
                 }
@@ -69,7 +70,7 @@ struct TimerView: View {
             } //VStack
             .padding() // 少しだけ余白
             if viewModel.isFinished {
-                FinishModal(showModal: $viewModel.isFinished)
+                FinishModal(showModal: $viewModel.isFinished, studyTime: $totalMinutes)
                     .transition(.move(edge: .bottom))
                     .animation(.easeInOut(duration: 3.0), value: viewModel.isFinished)
                     .environmentObject(router)
@@ -77,6 +78,7 @@ struct TimerView: View {
         }
         .onAppear {
             viewModel.startTimer(totalMinutes: totalMinutes)  // timer開始
+            futureTime = calculateFutureTime(totalMinutes: totalMinutes) // 終了時刻を計算
         }
     }
 }

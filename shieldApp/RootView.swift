@@ -12,13 +12,14 @@ import FamilyControls
 
 enum ViewPath: Hashable {
     /// 画面遷移先のパスを定義
+    case main       // メイン画面となるTabView
     case content
     case finish     // スクリーンタイムAPI許可画面
     case blockTime  // 時間制限画面
     case quickBlock  // クイックブロック画面
     case form        // お問い合わせフォーム画面
-    case timer(totalMinutes: Int)           // timer
-    case save // 記録画面
+    case timer(totalMinutes: Int) // timer
+    case save(studyTime: Int) // 記録画面
     case recordList // 学習記録一覧
     case graph // グラフ画面
 }
@@ -46,14 +47,19 @@ struct RootView: View {
       } // 空のVStack
         .navigationDestination(for: ViewPath.self) { value in
           switch value {
+          case .main:
+              MainTabView()
+                  .navigationBarBackButtonHidden(true)
+                  .navigationBarTitleDisplayMode(.inline)
+                  .environmentObject(router)
+                  .environmentObject(model)
           case .content:
               ContentView()
           case .blockTime:
             BlockTimeView()
           case .quickBlock:
             QuickBlockView()
-             .navigationTitle("スマホを封印して集中しよう！")
-             .navigationBarBackButtonHidden(true)
+             .navigationTitle("クイックブロック")
              .navigationBarTitleDisplayMode(.inline)
              .environmentObject(router)
              .environmentObject(model)
@@ -61,15 +67,15 @@ struct RootView: View {
             FormWebView()
           case .timer(let totalMinutes):
               TimerView(totalMinutes: totalMinutes) // 仮置き
-                  .navigationBarBackButtonHidden(true)
+                  .navigationBarTitleDisplayMode(.inline)
                   .navigationTitle("ブロック中")
                   .navigationBarTitleDisplayMode(.inline)
                   .environmentObject(router)
           case .finish:
               FinishView()
-          case .save:
+          case .save(let studyTime):
 //              SaveDataView()
-              RecordEntryView()
+              RecordEntryView(studyTime: studyTime)
                   .navigationBarBackButtonHidden(true)
                   .environmentObject(router)
 //                  .navigationTitle("学習記録")
@@ -78,6 +84,8 @@ struct RootView: View {
                   .environmentObject(router)
           case .graph:
               StudyTimeGraphView()
+                  .navigationTitle("学習時間グラフ")
+                  .navigationBarTitleDisplayMode(.inline)
           }
         }
         .environmentObject(router)
@@ -89,7 +97,8 @@ struct RootView: View {
 
       // 初期表示する画面を設定
         if UserDefaults.standard.bool(forKey: "isAuthorized") {
-            router.viewPath.append(.quickBlock)
+//            router.viewPath.append(.quickBlock)
+            router.viewPath.append(.main)
         } else {
             router.viewPath.append(.finish)
         }

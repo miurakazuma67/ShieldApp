@@ -19,23 +19,23 @@ struct StudyRecordListView: View {
                 ForEach(studyRecords) { record in
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
-                            Text("日付:")
                             Spacer()
-                            Text(record.date, style: .date)
+                            Text(dateToJapaneseString(record.date))
+                                .font(.system(size: 12))
                                 .foregroundColor(.secondary)
+                                
                         }
                         
                         HStack {
                             Text("勉強時間:")
                             Spacer()
                             Text("\(record.studyHours) 時間 \(record.studyMinutes) 分")
+                                .font(.system(size: 14))
                                 .foregroundColor(.secondary)
                         }
                         
                         if let memo = record.memo, !memo.isEmpty {
                             HStack {
-                                Text("メモ:")
-                                Spacer()
                                 Text(memo)
                                     .foregroundColor(.secondary)
                             }
@@ -55,10 +55,11 @@ struct StudyRecordListView: View {
                 .onDelete(perform: deleteRecord) // スワイプで削除
             }
             .navigationTitle("学習記録")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 EditButton() // 編集モードボタン（削除用）
             }
-        } // NavigaitonView
+        }
     }
 
     // データ削除のためのメソッド
@@ -76,6 +77,6 @@ struct StudyRecordListView: View {
     }
 
     private func handleShowGraph() {
-        
+        router.viewPath.append(.graph) // グラフ表示
     }
 }

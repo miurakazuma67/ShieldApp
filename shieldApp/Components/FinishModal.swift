@@ -9,12 +9,13 @@ import SwiftUI
 struct FinishModal: View {
     @EnvironmentObject var router: NavigationRouter // Router
     @Binding var showModal: Bool // モーダル表示用フラグ
+    @Binding var studyTime: Int // 学習時間
 
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 VStack(spacing: 30) {
-                    AnimatedCheckmarkView()
+                    AnimatedCheckmarkView(studyTime: $studyTime)
                 }
                 .frame(width: geometry.size.width * 2/3, height: geometry.size.height / 2.5)
                 .background(Color.white)
@@ -35,9 +36,10 @@ struct FinishModal: View {
     }
 }
 
-// アニメーションするチェックマーク
 struct AnimatedCheckmarkView: View {
     @EnvironmentObject var router: NavigationRouter // Router
+    @Binding var studyTime: Int // 学習時間をBindingとして受け取る
+
     @State private var isCircleDrawn = false
     @State private var isCheckMarkShown = false
     @State private var isUnderTextShown = false
@@ -65,14 +67,15 @@ struct AnimatedCheckmarkView: View {
 
             if isUnderTextShown {
                 VStack(alignment: .center) {
-                    Text("お疲れ様でした！\n学習を記録しましよう") //改行したい
-                        .multilineTextAlignment(.center) // 文字を真ん中よせ
+                    Text("お疲れ様でした！\n学習を記録しましょう")
+                        .multilineTextAlignment(.center)
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                         .transition(.opacity)
                     Button(action: {
-                        router.viewPath.append(.save)
+                        // studyTimeを使って画面遷移
+                        router.viewPath.append(.save(studyTime: studyTime))
                     }) {
                         Text("学習を記録する")
                     }
