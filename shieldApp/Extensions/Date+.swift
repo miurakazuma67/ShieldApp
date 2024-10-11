@@ -24,7 +24,7 @@ func dateToJapaneseString(_ date: Date) -> String {
     let calendar = Calendar.current
     let formatter = DateFormatter()
     formatter.locale = Locale(identifier: "ja_JP")
-    
+
     if calendar.isDateInToday(date) {
         return "今日"
     } else if calendar.isDateInYesterday(date) {

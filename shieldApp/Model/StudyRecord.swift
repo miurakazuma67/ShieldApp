@@ -11,11 +11,11 @@ import Foundation
 // SwiftDataのエンティティモデル
 @Model
 class StudyRecord { // struct ではなく class に変更
-    var date: Date
-    var studyHours: Int
-    var studyMinutes: Int
-    var memo: String?
-    var material: String?
+    var date: Date // 日付
+    var studyHours: Int // 勉強時間(h）
+    var studyMinutes: Int // 勉強時間(m）
+    var memo: String? // メモ
+    var material: String? // 教材
 
     // イニシャライザ
     init(date: Date, studyHours: Int, studyMinutes: Int, memo: String? = nil, material: String? = nil) {
