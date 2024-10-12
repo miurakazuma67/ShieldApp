@@ -92,16 +92,19 @@ struct RootView: View {
         .environmentObject(model)
         .environmentObject(store)
     }.onAppear {
-        let status = AuthorizationCenter.shared.authorizationStatus
+        checkAuthorizedStatus()
+    }
+  }
+    func checkAuthorizedStatus() {
+        let status = AuthorizationCenter.shared.authorizationStatus // 利用許可を確認
         print("🍣status \(status)")
 
       // 初期表示する画面を設定
         if UserDefaults.standard.bool(forKey: "isAuthorized") {
-//            router.viewPath.append(.quickBlock)
+    //            router.viewPath.append(.quickBlock)
             router.viewPath.append(.main)
         } else {
             router.viewPath.append(.finish)
         }
     }
-  }
 }

@@ -11,10 +11,10 @@ import Charts
 // グラフの上側のみ丸くするために使用
 struct TopRoundedRectangle: Shape {
     var cornerRadius: CGFloat // 角丸の半径
-    
+
     func path(in rect: CGRect) -> Path {
         var path = Path()
-        
+
         // 四角形の上部だけ角丸、下部はそのままにする
         path.move(to: CGPoint(x: rect.minX, y: rect.maxY)) // 左下
         path.addLine(to: CGPoint(x: rect.minX, y: rect.minY + cornerRadius)) // 左上
