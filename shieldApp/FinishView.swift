@@ -7,7 +7,6 @@
 
 import SwiftUI
 import DeviceActivity
-import ScreenTime
 import FamilyControls
 
 // 認可状態ステータス
@@ -16,9 +15,9 @@ enum AuthorizationStatus: String {
 }
 
 struct FinishView: View {
-    @State private var showAlert = false
-    @State private var activitySummary: String = "No data yet"
-    
+    @State private var showAlert = false                       // アラートを出すかどうか
+    @State private var activitySummary: String = "No data yet" // データがない時に表示
+
     var body: some View {
         VStack {
             Text(activitySummary)
@@ -39,7 +38,7 @@ struct FinishView: View {
             }
         }
         .onAppear {
-            Task { await checkAndHandleAuthorizationStatus() }
+            Task { await checkAndHandleAuthorizationStatus() } // 権限チェック
         }
     }
 
