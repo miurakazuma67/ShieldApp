@@ -101,10 +101,10 @@ struct RootView: View {
 
       // 初期表示する画面を設定
         if UserDefaults.standard.bool(forKey: "isAuthorized") {
-    //            router.viewPath.append(.quickBlock)
-            router.viewPath.append(.main)
+//                router.viewPath.append(.quickBlock)
+            router.viewPath.append(.main)  // メイン画面に遷移
         } else {
-            router.viewPath.append(.finish)
+            router.viewPath.append(.finish) 
         }
     }
 }
