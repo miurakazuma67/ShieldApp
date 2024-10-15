@@ -8,6 +8,7 @@
 import SwiftUI
 import Charts
 
+// TODO: State StateObj EnvironmentObjを使用したコードに変更する
 // グラフの上側のみ丸くするために使用
 struct TopRoundedRectangle: Shape {
     var cornerRadius: CGFloat // 角丸の半径

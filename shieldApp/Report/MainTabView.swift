@@ -14,20 +14,17 @@ struct MainTabView: View {
 
     var body: some View {
         TabView {
-            // 受信タブ
-            StudyRecordListView()
-                .environmentObject(router)
-                .environmentObject(model)
-                .tabItem {
-                    Label("学習記録", systemImage: "timer")
-                }
-
             // TODO: 送信タブ 最初はこのViewを表示するようにしたい
             QuickBlockView()
                 .environmentObject(router)
                 .environmentObject(model)
                 .tabItem {
                     Label("クイックブロック", systemImage: "shield.slash")
+                }
+            
+            StudyRecordListView()
+                .tabItem {
+                    Label("学習記録", systemImage: "timer")
                 }
             
             StudyTimeGraphView()

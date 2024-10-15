@@ -11,13 +11,11 @@ import SwiftData
 struct StudyRecordListView: View {
     @Query(sort: \StudyRecord.date, order: .reverse) private var studyRecords: [StudyRecord]
     @Environment(\.modelContext) private var modelContext
-    @EnvironmentObject var router: NavigationRouter
-
     @State private var currentPage: Int = 0
-    private let recordsPerPage: Int = 10
     @State private var showErrorAlert: Bool = false
     @State private var errorMessage: String = ""
-
+    private let recordsPerPage: Int = 10 // 1ページあたりのデータ件数
+    
     var body: some View {
         NavigationStack {
             List {
@@ -73,7 +71,7 @@ struct StudyRecordListView: View {
             let record = studyRecords[index]
             modelContext.delete(record) // コンテキストから記録を削除
         }
-        
+
         do {
             try modelContext.save() // データベースに変更を保存
         } catch {

@@ -43,6 +43,7 @@
 		9CAE61D82CAFCFE400ED1354 /* StudyTimeGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61D72CAFCFE300ED1354 /* StudyTimeGraphView.swift */; };
 		9CAE61DA2CB1676500ED1354 /* StudyTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61D92CB1676500ED1354 /* StudyTimeViewModel.swift */; };
 		9CAE61DC2CB6EA8700ED1354 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61DB2CB6EA8700ED1354 /* MainTabView.swift */; };
+		9CAE61DE2CBD832C00ED1354 /* StudyRecordListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE61DD2CBD832C00ED1354 /* StudyRecordListViewModel.swift */; };
 		9CBBFBBB2C3AD6E000807F3E /* shieldAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBBA2C3AD6E000807F3E /* shieldAppApp.swift */; };
 		9CBBFBBD2C3AD6E000807F3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBFBBC2C3AD6E000807F3E /* ContentView.swift */; };
 		9CBBFBBF2C3AD6E200807F3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CBBFBBE2C3AD6E200807F3E /* Assets.xcassets */; };
@@ -143,6 +144,7 @@
 		9CAE61D72CAFCFE300ED1354 /* StudyTimeGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeGraphView.swift; sourceTree = "<group>"; };
 		9CAE61D92CB1676500ED1354 /* StudyTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeViewModel.swift; sourceTree = "<group>"; };
 		9CAE61DB2CB6EA8700ED1354 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		9CAE61DD2CBD832C00ED1354 /* StudyRecordListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRecordListViewModel.swift; sourceTree = "<group>"; };
 		9CBBFBB72C3AD6E000807F3E /* shieldApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shieldApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CBBFBBA2C3AD6E000807F3E /* shieldAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shieldAppApp.swift; sourceTree = "<group>"; };
 		9CBBFBBC2C3AD6E000807F3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			children = (
 				9CAE61C42CA31AFC00ED1354 /* RecordEntryView.swift */,
 				9CAE61C82CA31F1900ED1354 /* StudyRecordListView.swift */,
+				9CAE61DD2CBD832C00ED1354 /* StudyRecordListViewModel.swift */,
 				9CAE61DB2CB6EA8700ED1354 /* MainTabView.swift */,
 			);
 			path = Report;
@@ -744,6 +747,7 @@
 				9C3F9EFD2C41739C00F9F8B0 /* QuickBlockView.swift in Sources */,
 				9C0D8D592C53C16D00613872 /* IconAndTextView.swift in Sources */,
 				9C3E11B22C7559810061C952 /* PageControl.swift in Sources */,
+				9CAE61DE2CBD832C00ED1354 /* StudyRecordListViewModel.swift in Sources */,
 				9C3E11B62C7559C70061C952 /* PageViewController.swift in Sources */,
 				9CC4E4152C4B669D0019D357 /* ViewControllerRepresentable.swift in Sources */,
 				9CBBFBBB2C3AD6E000807F3E /* shieldAppApp.swift in Sources */,

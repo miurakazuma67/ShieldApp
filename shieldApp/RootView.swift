@@ -74,14 +74,12 @@ struct RootView: View {
           case .finish:
               FinishView()
           case .save(let studyTime):
-//              SaveDataView()
               RecordEntryView(studyTime: studyTime)
                   .navigationBarBackButtonHidden(true)
                   .environmentObject(router)
 //                  .navigationTitle("学習記録")
           case .recordList:
               StudyRecordListView()
-                  .environmentObject(router)
           case .graph:
               StudyTimeGraphView()
                   .navigationTitle("学習時間グラフ")
@@ -98,6 +96,7 @@ struct RootView: View {
     func checkAuthorizedStatus() {
         let status = AuthorizationCenter.shared.authorizationStatus // 利用許可を確認
         print("🍣status \(status)")
+        print("viewPath before: \(router.viewPath)")
 
       // 初期表示する画面を設定
         if UserDefaults.standard.bool(forKey: "isAuthorized") {
@@ -106,5 +105,6 @@ struct RootView: View {
         } else {
             router.viewPath.append(.finish) 
         }
+        print("viewPath after: \(router.viewPath)")
     }
 }
