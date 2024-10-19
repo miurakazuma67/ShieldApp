@@ -25,8 +25,9 @@ enum ViewPath: Hashable {
 }
 
 class NavigationRouter: ObservableObject {
-  /// 現在の画面遷移先を保持する配列
-  @Published var viewPath: [ViewPath] = []
+    /// 現在の画面遷移先を保持する配列
+    @Published var viewPath: [ViewPath] = []
+    @Published var selectedTab: Int = 1 // MainTabViewにおいて選択されているタブ
 }
 
 struct RootView: View {
@@ -67,7 +68,7 @@ struct RootView: View {
             FormWebView()
           case .timer(let totalMinutes):
               TimerView(totalMinutes: totalMinutes) // 仮置き
-                  .navigationBarTitleDisplayMode(.inline)
+                  .navigationBarBackButtonHidden(true)
                   .navigationTitle("ブロック中")
                   .navigationBarTitleDisplayMode(.inline)
                   .environmentObject(router)
@@ -96,14 +97,11 @@ struct RootView: View {
     func checkAuthorizedStatus() {
         let status = AuthorizationCenter.shared.authorizationStatus // 利用許可を確認
         print("🍣status \(status)")
-        print("viewPath before: \(router.viewPath)")
-
       // 初期表示する画面を設定
         if UserDefaults.standard.bool(forKey: "isAuthorized") {
             router.viewPath.append(.main)  // メイン画面に遷移
         } else {
             router.viewPath.append(.finish) 
         }
-        print("viewPath after: \(router.viewPath)")
     }
 }

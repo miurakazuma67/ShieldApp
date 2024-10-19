@@ -11,22 +11,22 @@ import SwiftUI
 struct MainTabView: View {
     @EnvironmentObject var router: NavigationRouter
     @EnvironmentObject var model: DataModel
+//    @State var count = 2
 
     var body: some View {
         TabView {
-            // TODO: 送信タブ 最初はこのViewを表示するようにしたい
+            StudyRecordListView()
+                .tabItem {
+                    Label("学習記録", systemImage: "timer")
+                }
+
             QuickBlockView()
                 .environmentObject(router)
                 .environmentObject(model)
                 .tabItem {
                     Label("クイックブロック", systemImage: "shield.slash")
                 }
-            
-            StudyRecordListView()
-                .tabItem {
-                    Label("学習記録", systemImage: "timer")
-                }
-            
+
             StudyTimeGraphView()
                 .environmentObject(router)
                 .environmentObject(model)
@@ -35,5 +35,6 @@ struct MainTabView: View {
                 }
             // TODO: 設定画面を追加する必要
         }
+//        .onAppear{print("🐈router.selectedTab: \(router.selectedTab)")}
     }
 }

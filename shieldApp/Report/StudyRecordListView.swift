@@ -54,6 +54,7 @@ struct StudyRecordListView: View {
                 .onDelete(perform: deleteRecord) // スワイプで削除
             }
             .navigationTitle("勉強記録一覧")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 EditButton() // 編集モードボタン（削除用）
             }
