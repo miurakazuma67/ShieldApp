@@ -11,7 +11,6 @@ import SwiftUI
 struct MainTabView: View {
     @EnvironmentObject var router: NavigationRouter
     @EnvironmentObject var model: DataModel
-//    @State var count = 2
 
     var body: some View {
         TabView {
