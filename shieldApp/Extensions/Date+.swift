@@ -30,7 +30,7 @@ func dateToJapaneseString(_ date: Date) -> String {
     } else if calendar.isDateInYesterday(date) {
         return "昨日"
     } else {
-        formatter.dateFormat = "yyyy年MM月dd日（EEEE）" // 日付と曜日を表示
+        formatter.dateFormat = "yyyy年MM月dd日（EE）" // 日付と曜日を表示
         return formatter.string(from: date)
     }
 }

@@ -7,8 +7,10 @@
 
 import SwiftUI
 import Charts
+import SwiftData
 
 class StudyTimeViewModel: ObservableObject {
+    @Query(sort: \StudyRecord.date, order: .reverse) private var studyRecords: [StudyRecord] // データ型を定義
     @Published var weeklyData: [(date: String, count: Double, isToday: Bool, isSelected: Bool)] = []
     @Published var selectedStudyTime: (hours: Int, minutes: Int)? = nil
 
@@ -31,17 +33,35 @@ class StudyTimeViewModel: ObservableObject {
     }
 
     init() {
-        let todayDate = DateFormatter.customFormatter.string(from: Date()) // 今日の日付取得
-        
-        // 今日を基準に一週間分の日付を取得
-        let weekDates = getLastWeekDates(from: Date()) // もう少し簡単にできそう
-        let sampleData: [(String, Double)] = [
-            ("10/25", 7), ("10/26", 8), ("10/27", 6), ("10/28", 10),
-            ("10/29", 9), ("10/30", 10), ("10/31", 7)
-        ]
+        calculateWeeklyStudyTime() // 初期化時に計算
+    }
 
-        self.weeklyData = sampleData.map { (date, count) in
-            let isToday = (date == todayDate)
+    // 1週間の勉強時間を日ごとに合計
+    private func calculateWeeklyStudyTime() {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+
+        // 過去7日間の日付ごとの合計時間を保存する辞書
+        var dailyStudyTime: [String: Double] = [:]
+
+        // 今日から過去6日分のデータを取得
+        for i in 0..<7 {
+            if let targetDate = calendar.date(byAdding: .day, value: -i, to: today) {
+                let formattedDate = DateFormatter.customFormatter.string(from: targetDate)
+                dailyStudyTime[formattedDate] = 0 // 初期化
+            }
+        }
+
+        // レコードを日付ごとに集計
+        for record in studyRecords {
+            let recordDate = DateFormatter.customFormatter.string(from: record.date)
+            let totalHours = Double(record.studyHours) + Double(record.studyMinutes) / 60.0
+            dailyStudyTime[recordDate, default: 0] += totalHours
+        }
+
+        // weeklyDataに格納し、グラフに使用できる形にする
+        self.weeklyData = dailyStudyTime.sorted(by: { $0.key < $1.key }).map { (date, count) in
+            let isToday = date == DateFormatter.customFormatter.string(from: today)
             return (date: date, count: count, isToday: isToday, isSelected: false)
         }
     }

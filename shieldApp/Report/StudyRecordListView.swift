@@ -20,10 +20,11 @@ struct StudyRecordListView: View {
                 ForEach(studyRecords) { record in
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
-                            Text("日付:")
                             Spacer()
-                            Text(record.date, style: .date)
+                            Text(dateToJapaneseString(record.date))
                                 .foregroundColor(.secondary)
+                                .padding(.trailing, 40)
+//                                .font(<#Font?#>)
                         }
 
                         HStack {

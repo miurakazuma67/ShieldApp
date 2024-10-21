@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Charts
+import SwiftData
 
 // TODO: State StateObj EnvironmentObjを使用したコードに変更する
 // グラフの上側のみ丸くするために使用
