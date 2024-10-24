@@ -85,6 +85,8 @@ struct RootView: View {
               StudyTimeGraphView()
                   .navigationTitle("学習時間グラフ")
                   .navigationBarTitleDisplayMode(.inline)
+                  .environmentObject(router)
+                  .environmentObject(model)
           }
         } // NavigationStack
         .environmentObject(router)

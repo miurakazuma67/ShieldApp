@@ -30,6 +30,7 @@ struct FinishModal: View {
                 .onTapGesture {
                     showModal = false // モーダルを閉じる
                     // モーダルを閉じたら、記録画面に遷移
+                    router.viewPath.append(.save(studyTime: studyTime))
                     // QuickBlock画面に遷移
                 }
         )

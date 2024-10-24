@@ -7,7 +7,6 @@
 import SwiftUI
 
 struct TimerView: View {
-    @State private var isFinished: Bool = false  // 完了かどうか
     @StateObject var viewModel = TimerViewModel() // Timer VM
     @State private var totalMinutes: Int // 遷移元画面で設定した時間
     @State private var futureTime: String = "" // 計算された終了時刻を保持する変数
@@ -78,6 +77,7 @@ struct TimerView: View {
         }
         .onAppear {
             viewModel.startTimer(totalMinutes: totalMinutes)  // timer開始
+            viewModel.isTimerProgress = true // 動作中なのでtrueにする
             futureTime = calculateFutureTime(totalMinutes: totalMinutes) // 終了時刻を計算
         }
     }

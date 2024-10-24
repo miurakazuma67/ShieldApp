@@ -32,8 +32,7 @@ struct MainTabView: View {
                 .tabItem {
                     Label("グラフ", systemImage: "chart.bar.xaxis")
                 }
-            // TODO: 設定画面を追加する必要
+            // TODO: 設定画面を追加
         }
-//        .onAppear{print("🐈router.selectedTab: \(router.selectedTab)")}
     }
 }

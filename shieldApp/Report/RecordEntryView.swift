@@ -39,7 +39,7 @@ struct RecordEntryView: View {
                             isPickerPresented.toggle()
                         }
                 }
-                
+
                 // Picker表示は今後のためにコメントアウトされています
                 // if isPickerPresented {
                 //     PickerSelectionView(studyTime: $studyTime, isPickerPresented: $isPickerPresented)
@@ -57,7 +57,7 @@ struct RecordEntryView: View {
 
                 Section(header: Text("教材")) {
                     TextField("教材名を入力", text: $material)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
             }
             .navigationBarTitle("記録を入力", displayMode: .inline)
